@@ -1,0 +1,7 @@
+credential_file = /Users/ricardoquintero/.bigquery.v2.token
+project_id = global-alumni-365215
+--format = csv
+--quiet = true
+[query]
+--use_legacy_sql = false
+--max_rows = 10000000

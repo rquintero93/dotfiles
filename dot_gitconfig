@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Ricardo Quintero
+	email = rquinterog93@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = Ricardo Quintero
+#	email = ricardoquintero@Ricardos-MBP.attlocal.net
+[init]
+	templateDir = /Users/ricardoquintero/.git-templates
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+	dark = true
+	syntax-theme = Catppuccin Mocha
+	hyperlinks = true
+[merge]
+	conflictStyle = zdiff3
+[diff]
+    colorMoved = default
