@@ -13,21 +13,19 @@ eval "$(starship init zsh)"
 source "$HOME/config-repo/.env"
 . "$HOME/.local/bin/env"
 . "$HOME/.atuin/bin/env"
-#
+
 # Editor
 export EDITOR="nvim"
 
 # PATHs
 eval "$(/opt/homebrew/bin/brew shellenv)"
-# export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.atuin/bin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 fpath=(/Users/ricardoquintero/.docker/completions $fpath)
 
-# Lazier init with longer timeouts
+# Load zoxide before fzf-tab
 eval "$(zoxide init zsh)"
-# zsh-defer -t 0.5 eval "$(tmuxifier init -)"
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
