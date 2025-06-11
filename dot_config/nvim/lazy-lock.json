@@ -23,7 +23,7 @@
   "edgy.nvim": { "branch": "main", "commit": "7e8dedc39abebe40c289b8012cc89b11c69aa7a0" },
   "flash.nvim": { "branch": "main", "commit": "3c942666f115e2811e959eabbdd361a025db8b63" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
-  "gitsigns.nvim": { "branch": "main", "commit": "d0f90ef51d4be86b824b012ec52ed715b5622e51" },
+  "gitsigns.nvim": { "branch": "main", "commit": "731b581428ec6c1ccb451b95190ebbc6d7006db7" },
   "glance.nvim": { "branch": "master", "commit": "1649b772a7216bfd55125c627e100d065ddf3de9" },
   "highlight-undo.nvim": { "branch": "main", "commit": "a5e2e2d43f6d131bf526619baeeeec32397b0789" },
   "hml.nvim": { "branch": "main", "commit": "54b4d0a4d800f79310443f9a26d54023daeb9e7c" },
