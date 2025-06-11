@@ -1,0 +1,9 @@
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "af8bf6f"
+hash = ""
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "68326b4"
+hash = "2ac87e1b3a61f5887472899e86535d29"

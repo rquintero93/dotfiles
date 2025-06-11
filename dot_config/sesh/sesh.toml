@@ -1,0 +1,15 @@
+[default_session]
+startup_command = "test -d .venv && source .venv/bin/activate && nvim || nvim"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "db"
+path = "~/Documents/Global Alumni/Queries/"
+startup_command = "nvim"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "config"
+path = "~/config-repo/"
+startup_command = "nvim"
+preview_command = "eza --all --git --icons --color=always {}"
