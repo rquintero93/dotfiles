@@ -19,7 +19,7 @@ export EDITOR="nvim"
 
 # PATHs
 eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+# export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.atuin/bin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
@@ -27,7 +27,7 @@ fpath=(/Users/ricardoquintero/.docker/completions $fpath)
 
 # Lazier init with longer timeouts
 eval "$(zoxide init zsh)"
-zsh-defer -t 0.5 eval "$(tmuxifier init -)"
+# zsh-defer -t 0.5 eval "$(tmuxifier init -)"
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
