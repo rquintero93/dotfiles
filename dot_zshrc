@@ -6,8 +6,6 @@ source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-defer/zsh-defer.plugi
 source ~/.antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
 
-# Prompt
-eval "$(starship init zsh)"
 
 # ENV
 source "$HOME/config-repo/.env"
@@ -31,6 +29,9 @@ if [ -f '/Users/ricardoquintero/google-cloud-sdk/completion.zsh.inc' ]; then . '
 
 # Load zoxide before fzf-tab
 eval "$(zoxide init zsh)"
+
+# Prompt
+eval "$(starship init zsh)"
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
