@@ -55,6 +55,7 @@ alias lzd='lazydocker'
 alias airbyte='ssh -L 8000:localhost:8000 airbyte'
 alias nerdssh="ssh -i ~/.ssh/pems/RicardoSSH.pem ubuntu@15.237.174.231"
 alias switch-nvim="/usr/local/bin/switch_nvim_config.sh"
+alias glow="glow -s ~/config-repo/catppuccin.json"
 function jupyconv() { jupytext --to py:percent "$1"; }
 
 # DB Tunnel Aliases
