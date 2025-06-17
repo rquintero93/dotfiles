@@ -10,7 +10,7 @@ return {
             api_key = 'TERM',
             name = 'Ollama',
             end_point = 'http://localhost:11434/v1/completions',
-            model = 'codestral:latest',
+            model = 'qwen2.5-coder:latest',
             optional = {
               max_tokens = 256,
               top_p = 0.9,
