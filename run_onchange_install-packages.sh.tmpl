@@ -10,12 +10,28 @@ fi
 echo "Installing packages from Brewfile..."
 brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
 
+if ! command -v cargo >/dev/null 2>&1; then
+  echo "Installing Rust..."
+  /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
+fi
+
+cargo install bob-nvim
+bob use stable
+
+if command -v zsh >/dev/null 2>&1; then
+  chsh -s $(which zsh)
+else
+  brew install zsh
+  chsh -s $(which zsh)
+fi
+
 {{ else if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
 # Debian/Ubuntu example — customize as needed
 echo "Updating apt and installing packages..."
 sudo apt update && sudo apt install -y \
+  zsh \
   ripgrep \
   fd-find \
   curl \
@@ -35,4 +51,13 @@ zsh \
   yazi \
   luarocks
 
+if ! command -v cargo >/dev/null 2>&1; then
+  echo "Installing Rust..."
+  /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
+fi
+
+cargo install bob-nvim
+bob use stable
+
+chsh -s $(which zsh)
 {{ end -}}
