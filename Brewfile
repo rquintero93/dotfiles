@@ -1,5 +1,6 @@
 # Brewfile
 
+brew "uv"
 brew "age"
 brew "awscli"
 brew "bat"
