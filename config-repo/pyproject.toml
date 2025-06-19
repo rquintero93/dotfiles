@@ -1,0 +1,125 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "template"
+version = "0.1.0"
+description = "Add your description here"
+authors = [{ name = "Ricardo Quintero", email = "rquinterog93@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+[dependency-groups]
+dev = [
+  "ipython>=9.0.2",
+  "neovim>=0.3.1",
+  "pip>=25.0.1",
+  "pynvim>=0.5.2",
+  "sqlfluff>=3.3.1",
+  "visidata>=3.1.1",
+  "taskipy>=1.12.2",
+  "ruff>=0.4.0",
+  "basedpyright>=1.10.5",
+  "pytest>=8.1.1",
+  "pytest-cov>=4.1.0",
+  "pytest-asyncio>=0.21.0",
+  "pytest-mock",
+  "coverage[toml]",
+  "pre-commit",
+  "bandit",
+  "hypothesis",
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocstrings[python]",
+  "mkdocs-git-revision-date-localized-plugin",
+  "mypy>=1.5.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.basedpyright]
+ignore = ['*']
+
+[tool.mypy]
+python_version = "3.12"
+files = "src"
+strict = true
+show_error_codes = true
+warn_unreachable = true
+enable_error_code = ["redundant-expr", "truthy-bool"]
+[[tool.mypy.overrides]]
+module = ["numpy.*"]
+ignore_missing_imports = true
+
+[tool.ruff]
+fix = true
+line-length = 88
+exclude = ["*/.venv"]
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "Q", "S", "NPY", "PD", "W", "RUF", "AIR","FAST", "ASYNC"]
+ignore = ["S101", "S301", "PD901", "RUF013", "B018"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=src --cov-report=term-missing"
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+branch = true
+omit = ["*/tests/*", "*/.venv/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[tool.sqlfluff.core]
+dialect = "postgres"
+rules = "all"
+output_line_length = 120
+processes = -1
+exclude_rules = "RF01"
+max_line_length = 120
+large_file_skip_byte_limit = 0
+
+[tool.sqlfluff.indentation]
+indented_joins = false
+indent_using_on = true
+template_blocks_indent = false
+indent_unit = "space"
+tab_space_size = 4
+
+[tool.taskipy.tasks]
+help = "echo 'Available tasks: format, lint, typecheck, test, coverage, sqllint, sqlformat, docs_serve, docs_build, security, clean, check, dockerbuild'"
+# Run tests with check for the presence of test files
+test = "test -d tests && uv run pytest || echo 'No tests found, skipping...'"
+coverage = "uv run coverage run -m pytest && uv run coverage report -m"
+# Static type checking
+typecheck = "uv run mypy src"
+# Clean build artifacts
+clean = "rm -rf __pycache__ .pytest_cache .mypy_cache dist build *.egg-info"
+# Python Lint only
+lint = "uv run ruff check ."
+# Format & autofix everything Ruff can
+format = "uv run ruff check . --fix && ruff format ."
+# SQL Lint with fallback if no SQL files
+sqllint = "test -d sql && uv run sqlfluff lint sql/ || echo 'No SQL to lint, skipping...'"
+# SQL Format with fallback if no SQL files
+sqlformat = "test -d sql && uv run sqlfluff fix sql/ && uv run sqlfluff format sql/ || echo 'No SQL to format, skipping...'"
+# Full project health check
+check = "task clean && task lint && task sqllint && task typecheck && task test"
+# Smart Docker build with dynamic image name based on project name
+dockerbuild = "docker build -t $(basename \"$PWD\" | tr '[:upper:]' '[:lower:]') ."
+# Serve documentation locally
+docs_serve = "uv run mkdocs serve"
+docs_build = "uv run mkdocs build"
+# Security checks 
+security = "uv run bandit -r src"
