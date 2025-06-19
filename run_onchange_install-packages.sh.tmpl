@@ -1,0 +1,38 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# Install Homebrew if not present
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+echo "Installing packages from Brewfile..."
+brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+
+{{ else if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+# Debian/Ubuntu example — customize as needed
+echo "Updating apt and installing packages..."
+sudo apt update && sudo apt install -y \
+  ripgrep \
+  fd-find \
+  curl \
+  tmux \
+  neovim \
+  git \
+  bat \
+  zoxide \
+fzf \
+zsh \
+  eza \
+  btop \
+  jq \
+  sesh \
+  ipython \
+  starship \
+  yazi \
+  luarocks
+
+{{ end -}}
