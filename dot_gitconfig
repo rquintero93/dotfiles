@@ -2,11 +2,6 @@
 [user]
 	name = Ricardo Quintero
 	email = rquinterog93@gmail.com
-# Please adapt and uncomment the following lines:
-#	name = Ricardo Quintero
-#	email = ricardoquintero@Ricardos-MBP.attlocal.net
-[init]
-	templateDir = /Users/ricardoquintero/.git-templates
 [core]
 	pager = delta
 [interactive]
