@@ -11,6 +11,8 @@ fi
 echo "Installing packages from Brewfile..."
 brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
 
+git clone https://github.com/romkatv/zsh-defer.git ~/zsh-defer
+
 if ! command -v cargo >/dev/null 2>&1; then
   echo "Installing Rust..."
   /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
@@ -72,7 +74,10 @@ sudo apt update && sudo apt install -y \
   tree-sitter-cli \
   uv \
   visidata \
+  zoxide \
   zsh 
+
+git clone https://github.com/romkatv/zsh-defer.git ~/zsh-defer
 
 if ! command -v starship >/dev/null 2>&1; then
     echo "Installing Starship prompt..."
