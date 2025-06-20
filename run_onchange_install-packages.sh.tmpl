@@ -14,6 +14,7 @@ brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
 if ! command -v cargo >/dev/null 2>&1; then
   echo "Installing Rust..."
   /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
+  source "$HOME/.cargo/env"
 fi
 
 cargo install --locked bob-nvim
@@ -52,43 +53,48 @@ set -euo pipefail
 
 # Debian/Ubuntu example — customize as needed
 echo "Updating apt and installing packages..."
+sudo apt update
+sudo apt install -y software-properties-common curl gnupg apt-transport-https
+
+# For newer tools like bat, eza, etc.
+if ! grep -q "^deb .*backports" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
+    sudo add-apt-repository -y "deb http://deb.debian.org/debian $(lsb_release -cs)-backports main"
+fi
+
 sudo apt update && sudo apt install -y \
-  age \
-  bat \
-  btop \
   curl \
-  eza \
-  fd \
-  gh \
-  delta \
-  glow \
   fzf \
   git \
-  ipython \
+  ipython3 \
   jq \
-  jupytext \
-  luarocks \
-  lazydocker \
-  lazygit \
-  llm \
-  navi \
-  ollama \
-  rbenv \
+  python3-pip \
+  python3-jupytext \
+  lua-rocks \
+  lua5.4 \
   ripgrep \
-  sesh \
-  starship \
   tmux \
-  tree-sitter \
+  tree-sitter-cli \
   uv \
   visidata \
-  yazi \
-  zoxide \
   zsh 
+
+if ! command -v starship >/dev/null 2>&1; then
+    echo "Installing Starship prompt..."
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
+fi
+
+if ! command -v z >/dev/null 2>&1; then
+    echo "Installing Zoxide..."
+    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+fi
 
 if ! command -v cargo >/dev/null 2>&1; then
   echo "Installing Rust..."
   /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
+  source "$HOME/.cargo/env"
+
 fi
+
 
 cargo install --locked bob-nvim
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -108,8 +114,14 @@ else
     echo "Antidote successfully installed to $HOME/.antidote"
 fi
 
-if [ "$SHELL" != "$(which zsh)" ]; then
-  chsh -s "$(which zsh)"
+# Set ZSH as default shell
+if command -v zsh >/dev/null 2>&1; then
+    if [ "$SHELL" != "$(which zsh)" ]; then
+        echo "Changing default shell to zsh..."
+        sudo chsh -s "$(which zsh)" "$USER"
+    fi
+else
+    echo "ZSH installation failed, shell not changed"
 fi
 
 echo "Close and reopen your terminal to apply changes."
