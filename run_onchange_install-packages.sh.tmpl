@@ -18,6 +18,8 @@ fi
 cargo install bob-nvim
 bob use stable
 
+cargo install atuin
+
 if [ -d "$HOME/.antidote" ]; then
     echo "Antidote is already installed in $HOME/.antidote"
 else
@@ -39,25 +41,38 @@ fi
 # Debian/Ubuntu example — customize as needed
 echo "Updating apt and installing packages..."
 sudo apt update && sudo apt install -y \
-  zsh \
-  ripgrep \
-  fd-find \
-  curl \
-  tmux \
-  neovim \
-  git \
   bat \
-  zoxide \
-fzf \
-zsh \
-  eza \
+  age \
+  bat \
   btop \
-  jq \
-  sesh \
+  curl \
+  eza \
+  fd \
+  gh \
+  delta \
+  glow \
+  fzf \
+  git \
   ipython \
+  jq \
+  jupytext \
+  luarocks \
+  lazydocker \
+  lazygit \
+  llm \
+  navi \
+  ollama \
+  rbenv \
+  ripgrep \
+  sesh \
   starship \
+  tmux \
+  tree-sitter \
+  uv \
+  visidata \
   yazi \
-  luarocks
+  zoxide \
+  zsh 
 
 if ! command -v cargo >/dev/null 2>&1; then
   echo "Installing Rust..."
@@ -66,6 +81,8 @@ fi
 
 cargo install bob-nvim
 bob use stable
+
+cargo install atuin
 
 if [ -d "$HOME/.antidote" ]; then
     echo "Antidote is already installed in $HOME/.antidote"
