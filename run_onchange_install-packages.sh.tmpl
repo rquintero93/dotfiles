@@ -1,5 +1,6 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
+set -euo pipefail
 
 # Install Homebrew if not present
 if ! command -v brew >/dev/null 2>&1; then
@@ -15,10 +16,15 @@ if ! command -v cargo >/dev/null 2>&1; then
   /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
 fi
 
-cargo install bob-nvim
-bob use stable
+cargo install --locked bob-nvim
+export PATH="$HOME/.cargo/bin:$PATH"
+if command -v bob >/dev/null 2>&1; then
+  bob use stable
+else
+  echo "bob-nvim not found in PATH after install"
+fi
 
-cargo install atuin
+cargo install --locked atuin
 
 if [ -d "$HOME/.antidote" ]; then
     echo "Antidote is already installed in $HOME/.antidote"
@@ -29,19 +35,23 @@ else
 fi
 
 if command -v zsh >/dev/null 2>&1; then
-  chsh -s $(which zsh)
+  if [ "$SHELL" != "$(which zsh)" ]; then
+    chsh -s "$(which zsh)"
+  fi
 else
   brew install zsh
-  chsh -s $(which zsh)
+  if [ "$SHELL" != "$(which zsh)" ]; then
+    chsh -s "$(which zsh)"
+  fi
 fi
 
 {{ else if eq .chezmoi.os "linux" -}}
 #!/bin/bash
+set -euo pipefail
 
 # Debian/Ubuntu example — customize as needed
 echo "Updating apt and installing packages..."
 sudo apt update && sudo apt install -y \
-  bat \
   age \
   bat \
   btop \
@@ -79,10 +89,15 @@ if ! command -v cargo >/dev/null 2>&1; then
   /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
 fi
 
-cargo install bob-nvim
-bob use stable
+cargo install --locked bob-nvim
+export PATH="$HOME/.cargo/bin:$PATH"
+if command -v bob >/dev/null 2>&1; then
+  bob use stable
+else
+  echo "bob-nvim not found in PATH after install"
+fi
 
-cargo install atuin
+cargo install --locked atuin
 
 if [ -d "$HOME/.antidote" ]; then
     echo "Antidote is already installed in $HOME/.antidote"
@@ -92,6 +107,8 @@ else
     echo "Antidote successfully installed to $HOME/.antidote"
 fi
 
-chsh -s $(which zsh)
+if [ "$SHELL" != "$(which zsh)" ]; then
+  chsh -s "$(which zsh)"
+fi
 
 {{ end -}}

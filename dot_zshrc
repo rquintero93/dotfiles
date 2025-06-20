@@ -8,9 +8,9 @@ antidote load ~/.zsh_plugins.txt
 
 
 # ENV
-source "$HOME/config-repo/.env"
-. "$HOME/.local/bin/env"
-. "$HOME/.atuin/bin/env"
+[[ -f "$HOME/config-repo/.env" ]] && source "$HOME/config-repo/.env"
+[[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
+[[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
 
 # Editor
 export EDITOR="nvim"
@@ -131,7 +131,7 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
-source ~/fzf-git.sh/fzf-git.sh
+[[ -f ~/fzf-git.sh/fzf-git.sh ]] && source ~/fzf-git.sh/fzf-git.sh
 
 # Full fzf shell integration (keybindings + completion)
 if [[ -f ~/.fzf.zsh ]]; then
@@ -159,7 +159,7 @@ COMPLETION_WAITING_DOTS="true"
 autoload -Uz compinit
 zsh-defer -t 0.5 compinit
 
-eval "$(atuin init zsh --disable-up-arrow)"
+command -v atuin >/dev/null && eval "$(atuin init zsh --disable-up-arrow)"
 
 # zprof # Uncomment to profile zsh startup
 
