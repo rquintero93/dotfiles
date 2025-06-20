@@ -56,10 +56,6 @@ echo "Updating apt and installing packages..."
 sudo apt update
 sudo apt install -y software-properties-common curl gnupg apt-transport-https
 
-# For newer tools like bat, eza, etc.
-if ! grep -q "^deb .*backports" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
-    sudo add-apt-repository -y "deb http://deb.debian.org/debian $(lsb_release -cs)-backports main"
-fi
 
 sudo apt update && sudo apt install -y \
   curl \
