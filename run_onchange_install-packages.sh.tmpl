@@ -45,6 +45,7 @@ else
   fi
 fi
 
+echo "Close and reopen your terminal to apply changes."
 {{ else if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 set -euo pipefail
@@ -111,4 +112,5 @@ if [ "$SHELL" != "$(which zsh)" ]; then
   chsh -s "$(which zsh)"
 fi
 
+echo "Close and reopen your terminal to apply changes."
 {{ end -}}
