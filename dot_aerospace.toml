@@ -190,6 +190,9 @@ shift-down = ['volume set 0', 'mode main']
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 2'
 [[on-window-detected]]
+if.app-id = 'dev.warp.Warp-Stable'
+run = 'move-node-to-workspace 2'
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace 1'
 [[on-window-detected]]
@@ -212,6 +215,9 @@ if.app-id = 'com.microsoft.Excel'
 run = 'move-node-to-workspace 2'
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.apptorium.SideNotes-setapp'
 run = 'layout floating'
 
 [workspace-to-monitor-force-assignment]
