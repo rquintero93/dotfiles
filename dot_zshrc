@@ -32,10 +32,10 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Load zoxide before fzf-tab
-eval "$(zoxide init zsh)"
+command -V zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # Prompt
-eval "$(starship init zsh)"
+command -V starship >/dev/null && eval "$(starship init zsh)"
 
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
