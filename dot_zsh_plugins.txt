@@ -1,4 +1,5 @@
 # Official plugins
+romkatv/zsh-defer
 ohmyzsh/ohmyzsh path:plugins/colorize
 zsh-users/zsh-history-substring-search
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages

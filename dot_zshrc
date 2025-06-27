@@ -1,14 +1,10 @@
 # zmodload zsh/zprof # Uncomment to profile zsh startup
-# Load zsh-defer
-source "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-defer/zsh-defer.plugin.zsh"
 
 # Antidote plugin manager
 source ~/.antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
 
-
 # ENV
-[[ -f "$HOME/config-repo/.env" ]] && source "$HOME/config-repo/.env"
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 [[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
 
