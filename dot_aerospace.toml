@@ -158,11 +158,6 @@ alt-tab = 'workspace-back-and-forth'
 alt-ctrl-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-ctrl-shift-tab = 'move-workspace-to-monitor --wrap-around prev'
 
-alt-t = 'exec-and-forget open -n /Applications/kitty.app'
-alt-b = 'exec-and-forget open -n /Applications/Arc.app'
-alt-q = 'close'
-
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
