@@ -38,6 +38,7 @@ command -V starship >/dev/null && eval "$(starship init zsh)"
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
+alias hyprrc="nvim ~/.config/hypr/hyprland.conf"
 alias ls='eza --icons --group-directories-first'
 alias la='ls -la'
 alias cat='bat'
