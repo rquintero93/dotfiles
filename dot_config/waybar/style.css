@@ -46,8 +46,8 @@ button:hover {
 
 #workspaces button.active {
     background-color: transparent;
-    color: @mauve;
-    border-top: 2px solid @mauve;
+    color: @blue;
+    border-top: 2px solid @blue;
 }
 
 #workspaces button.urgent {
@@ -77,22 +77,22 @@ button:hover {
 
 #clock {
     color: @maroon;
-    border-bottom: 2px solid @maroon;
+    border-bottom: 0px solid @maroon;
 }
 
 #clock.date {
     color: @mauve;
-    border-bottom: 2px solid @mauve;
+    border-bottom: 0px solid @mauve;
 }
 
 #pulseaudio {
     color: @blue;
-    border-bottom: 2px solid @blue;
+    border-bottom: 0px solid @blue;
 }
 
 #network {
-    color: @yellow;
-    border-bottom: 2px solid @yellow;
+    color: @lavender;
+    border-bottom: 0px solid @lavender;
 }
 
 #idle_inhibitor {
@@ -106,7 +106,7 @@ button:hover {
 
 #battery {
     color: @green;
-    border-bottom: 2px solid @green;
+    border-bottom: 0px solid @green;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
