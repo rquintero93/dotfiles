@@ -91,13 +91,13 @@ button:hover {
 }
 
 #network {
-    color: @lavender;
+    color: @red;
     border-bottom: 0px solid @lavender;
 }
 
 #idle_inhibitor {
     margin-right: 12px;
-    color: @green;
+    color: @yellow;
 }
 
 #idle_inhibitor.activated {
