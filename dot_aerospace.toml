@@ -213,9 +213,6 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'net.whatsapp.WhatsApp'
 run = 'move-node-to-workspace 4'
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Excel'
-run = 'move-node-to-workspace 2'
-[[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
 [[on-window-detected]]
