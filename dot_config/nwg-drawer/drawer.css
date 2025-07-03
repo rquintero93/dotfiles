@@ -1,0 +1,40 @@
+window {
+    background-color: rgba(30, 30, 46, 0.95);
+    color: #cdd6f4
+}
+
+/* search entry */
+entry {
+    background-color: rgba(49, 50, 68, 0.8);
+    color: #cdd6f4;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #45475a
+}
+
+button, image {
+    background: none;
+    border: none
+}
+
+button:hover {
+    background-color: rgba(88, 91, 112, 0.3);
+    border-radius: 8px
+}
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+    margin: 0 10px 0 10px;
+    color: #89b4fa
+}
+
+#pinned-box {
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #6c7086
+}
+
+#files-box {
+    padding: 5px;
+    border: 1px dotted #6c7086;
+    border-radius: 15px
+}
