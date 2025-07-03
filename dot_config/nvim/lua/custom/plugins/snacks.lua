@@ -139,7 +139,7 @@ K0KKKKKKKKKKKKKXKKXXXKXXXXXXXXXXXXXXXXXXKXXX0dXXXXXXXXXXXXXXXXKKKKKKKKKKKKKKKKXN
       --   end,
       -- },
       sections = {
-        { section = 'header', padding = 2 },
+        { section = 'header', padding = 3 },
         {
           pane = 2,
           { section = 'keys', gap = 2, padding = 3 },
