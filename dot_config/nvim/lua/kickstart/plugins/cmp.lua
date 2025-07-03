@@ -119,9 +119,7 @@ return {
           { name = 'buffer', priority = 1300 },
           { name = 'path', priority = 250 },
           { name = 'vim-dadbod-completion', priority = 700 },
-          -- { name = 'sql', priority = 100 },
-          -- { name = 'dap', priority = 2000 },
-          { name = 'minuet', priority = 1100 },
+          -- { name = 'minuet', priority = 1100 }, -- turn on for local completions
         },
         performance = {
           -- It is recommended to increase the timeout duration due to
