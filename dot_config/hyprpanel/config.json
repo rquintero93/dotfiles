@@ -412,9 +412,7 @@
         "battery",
         "systray",
         "media",
-        "notifications",
-        "cputemp",
-        "cpu"
+        "notifications"
       ]
     }
   },
