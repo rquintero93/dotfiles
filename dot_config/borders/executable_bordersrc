@@ -7,6 +7,7 @@ options=(
 	active_color=0xFF89B4FA
 	inactive_color=0xFF45475A
 	ax_focus=on
+	blacklist="Kando"
 )
 
 borders "${options[@]}"
