@@ -1,19 +1,12 @@
 {
   "position": "top",
   "modules-left": ["hyprland/workspaces","hyprland/window"],
-  "modules-center": ["clock"],
-  "modules-right": ["idle_inhibitor","network","pulseaudio", "battery"],
+  "modules-center": [],
+  "modules-right": ["network", "pulseaudio", "battery", "clock"],
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "",
-        "deactivated": ""
-    }
-},
   "battery": {
     "states": {
       "warning": 30,
@@ -30,11 +23,11 @@
     "tooltip-format": "{time}"
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'> </span>",
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
     "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
-    "tooltip-format-wifi": "{essid} Signal Strength: {signalStrength}%"
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
   },
   "pulseaudio": {
       "format": "{icon}  {volume}%",

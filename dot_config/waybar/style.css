@@ -30,8 +30,8 @@ button {
 
 button:hover {
     background: inherit;
-    color: @blue;
-    border-top: 2px solid @blue;
+    color: @mauve;
+    border-top: 2px solid @mauve;
 }
 
 #workspaces button {
@@ -40,8 +40,8 @@ button:hover {
 
 #workspaces button.focused {
     background-color: transparent;
-    color: @blue;
-    border-top: 2px solid @blue;
+    color: @rosewater;
+    border-top: 2px solid @rosewater;
 }
 
 #workspaces button.active {
@@ -51,7 +51,7 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    background-color: @maroon;
+    background-color: #eb4d4b;
 }
 
 #pulseaudio,
@@ -76,32 +76,32 @@ button:hover {
 }
 
 #clock {
-    color: @blue;
-    border-bottom: 0px solid @blue;
+    color: @maroon;
+    border-bottom: 0px solid @maroon;
 }
 
 #clock.date {
-    color: @blue;
+    color: @mauve;
     border-bottom: 0px solid @mauve;
 }
 
 #pulseaudio {
-    color: @maroon;
+    color: @blue;
     border-bottom: 0px solid @blue;
 }
 
 #network {
-    color: @red;
+    color: @lavender;
     border-bottom: 0px solid @lavender;
 }
 
 #idle_inhibitor {
     margin-right: 12px;
-    color: @yellow;
+    color: #7cb342;
 }
 
 #idle_inhibitor.activated {
-    color: @maroon;
+    color: @red;
 }
 
 #battery {
