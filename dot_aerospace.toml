@@ -87,7 +87,7 @@ inner.horizontal = 20
 inner.vertical = 20
 outer.left = 20
 outer.bottom = 20
-outer.top = 12
+outer.top = [{ monitor."built-in" = 15 }, 45]
 outer.right = 20
 
 # 'main' binding mode declaration
@@ -196,6 +196,9 @@ if.app-id = 'dev.warp.Warp-Stable'
 run = 'move-node-to-workspace 2'
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace 1'
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = ' com.microsoft.Outlook'
