@@ -399,8 +399,7 @@
     "*": {
       "left": [
         "dashboard",
-        "workspaces",
-        "windowtitle"
+        "workspaces"
       ],
       "middle": [
         "clock"
@@ -432,5 +431,9 @@
   "menus.dashboard.shortcuts.enabled": true,
   "menus.dashboard.directories.enabled": false,
   "menus.clock.weather.key": "9eaa1ab2654e405091343310251602",
-  "menus.clock.weather.unit": "metric"
+  "menus.clock.weather.unit": "metric",
+  "theme.font.name": "FiraCode Nerd Font Mono",
+  "theme.font.label": "FiraCode Nerd Font Mono Bold",
+  "theme.bar.menus.menu.clock.scaling": 100,
+  "theme.bar.menus.menu.notifications.scaling": 100
 }
