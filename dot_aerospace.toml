@@ -230,7 +230,7 @@ run = 'layout floating'
 if.app-id = 'com.electron.kando'
 run = 'layout floating'
 [[on-window-detected]]
-if.app-name-regex-substring = 'Picture-in-Picture'
+if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
 
     
