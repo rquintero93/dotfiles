@@ -411,7 +411,6 @@
         "bluetooth",
         "network",
         "systray",
-        "media",
         "notifications"
       ]
     }
