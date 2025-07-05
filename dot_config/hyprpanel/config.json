@@ -272,7 +272,7 @@
   "theme.bar.buttons.notifications.border": "#b4befe",
   "theme.bar.buttons.clock.icon_background": "#6d87cb",
   "theme.bar.buttons.clock.icon": "#232338",
-  "theme.bar.buttons.clock.text": "#b4befe",
+  "theme.bar.buttons.clock.text": "#6d87cb",
   "theme.bar.buttons.clock.background": "#242438",
   "theme.bar.buttons.clock.border": "#f5c2e7",
   "theme.bar.buttons.battery.icon_background": "#a6e3a1",
