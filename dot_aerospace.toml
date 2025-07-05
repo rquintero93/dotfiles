@@ -203,6 +203,9 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace 1'
 [[on-window-detected]]
+if.app-id = 'org.mozilla.com.zen.browser'
+run = 'move-node-to-workspace 1'
+[[on-window-detected]]
 if.app-id = ' com.microsoft.Outlook'
 run = 'move-node-to-workspace 4'
 [[on-window-detected]]
