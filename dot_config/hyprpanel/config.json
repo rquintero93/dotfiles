@@ -458,5 +458,12 @@
   "menus.dashboard.shortcuts.left.shortcut2.command": "",
   "menus.dashboard.shortcuts.left.shortcut2.tooltip": "",
   "menus.dashboard.shortcuts.left.shortcut4.icon": "",
-  "menus.dashboard.shortcuts.left.shortcut4.tooltip": ""
+  "menus.dashboard.shortcuts.left.shortcut4.tooltip": "",
+  "bar.network.truncation_size": 6,
+  "bar.network.truncation": false,
+  "bar.network.label": false,
+  "bar.network.showWifiInfo": true,
+  "theme.matugen": false,
+  "theme.matugen_settings.mode": "dark",
+  "theme.matugen_settings.scheme_type": "tonal-spot"
 }
