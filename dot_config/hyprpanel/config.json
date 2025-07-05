@@ -465,5 +465,6 @@
   "bar.network.showWifiInfo": true,
   "theme.matugen": false,
   "theme.matugen_settings.mode": "dark",
-  "theme.matugen_settings.scheme_type": "tonal-spot"
+  "theme.matugen_settings.scheme_type": "tonal-spot",
+  "theme.font.size": "1.2rem"
 }
