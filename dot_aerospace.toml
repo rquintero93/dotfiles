@@ -229,7 +229,11 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.electron.kando'
 run = 'layout floating'
+[[on-window-detected]]
+if.app-name-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
 
+    
 [workspace-to-monitor-force-assignment]
 2 = 'main'
 1 = 'built-in'
