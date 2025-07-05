@@ -410,8 +410,7 @@
         "bluetooth",
         "battery",
         "systray",
-        "media",
-        "notifications"
+        "media"
       ]
     }
   },
