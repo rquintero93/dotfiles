@@ -405,12 +405,14 @@
         "clock"
       ],
       "right": [
+        "weather",
         "volume",
-        "network",
-        "bluetooth",
         "battery",
+        "bluetooth",
+        "network",
         "systray",
-        "media"
+        "media",
+        "notifications"
       ]
     }
   },
@@ -426,7 +428,7 @@
   "bar.notifications.hideCountWhenZero": true,
   "theme.bar.buttons.notifications.spacing": "0.5em",
   "wallpaper.enable": false,
-  "menus.dashboard.powermenu.avatar.image": "/home/ricardoquintero/wallpapers/cat_quasar.png",
+  "menus.dashboard.powermenu.avatar.image": "/home/ricardoquintero/Downloads/5499302.jpg",
   "menus.dashboard.shortcuts.enabled": true,
   "menus.dashboard.directories.enabled": false,
   "menus.clock.weather.key": "9eaa1ab2654e405091343310251602",
@@ -436,5 +438,25 @@
   "theme.bar.menus.menu.clock.scaling": 100,
   "theme.bar.menus.menu.notifications.scaling": 100,
   "bar.launcher.icon": "",
-  "bar.workspaces.spacing": 1
+  "bar.workspaces.spacing": 1,
+  "scalingPriority": "both",
+  "menus.dashboard.powermenu.avatar.name": "Ricardo Quintero",
+  "theme.bar.menus.menu.dashboard.profile.radius": "0.4em",
+  "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
+  "menus.dashboard.shortcuts.left.shortcut4.command": "",
+  "bar.customModules.updates.autoHide": false,
+  "bar.customModules.weather.unit": "metric",
+  "notifications.autoDismiss": true,
+  "theme.bar.menus.menu.notifications.height": "28em",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut3.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut3.command": "",
+  "menus.dashboard.shortcuts.left.shortcut3.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut2.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut2.command": "",
+  "menus.dashboard.shortcuts.left.shortcut2.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut4.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut4.tooltip": ""
 }
