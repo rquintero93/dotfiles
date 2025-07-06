@@ -468,5 +468,6 @@
   "notifications.ignore": [
     "kitty",
     "Problem Reporting"
-  ]
+  ],
+  "menus.dashboard.powermenu.logout": "uwsm stop"
 }
