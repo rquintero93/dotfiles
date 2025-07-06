@@ -464,5 +464,8 @@
   "theme.matugen": false,
   "theme.matugen_settings.mode": "dark",
   "theme.matugen_settings.scheme_type": "tonal-spot",
-  "theme.font.size": "1.2rem"
+  "theme.font.size": "1.2rem",
+  "notifications.ignore": [
+    "kitty"
+  ]
 }
