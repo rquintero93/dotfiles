@@ -410,7 +410,6 @@
         "battery",
         "bluetooth",
         "network",
-        "systray",
         "notifications"
       ]
     }
