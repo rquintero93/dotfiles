@@ -469,5 +469,5 @@
     "kitty",
     "Problem Reporting"
   ],
-  "menus.dashboard.powermenu.logout": "uwsm stop"
+  "menus.dashboard.powermenu.logout": "hyprctl dispatch exit"
 }
