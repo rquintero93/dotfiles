@@ -466,6 +466,7 @@
   "theme.matugen_settings.scheme_type": "tonal-spot",
   "theme.font.size": "1.2rem",
   "notifications.ignore": [
-    "kitty"
+    "kitty",
+    "Problem Reporting"
   ]
 }
