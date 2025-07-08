@@ -49,7 +49,7 @@ window {
     border-radius:               0px;
     border-color:                @selected;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            transparent;
 }
 
 /*****----- Main Box -----*****/

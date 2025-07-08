@@ -11,7 +11,7 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/powermenu/type-3"
-theme='style-1'
+theme='style-3'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -60,6 +60,8 @@ run_cmd() {
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
+		elif [[ $1 == '--lock' ]]; then
+			hyprlock
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
 			amixer set Master mute
@@ -67,6 +69,8 @@ run_cmd() {
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				openbox --exit
+			elif [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
+				hyprctl dispatch exit
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
@@ -90,11 +94,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
-		fi
+		run_cmd --lock
         ;;
     $suspend)
 		run_cmd --suspend
