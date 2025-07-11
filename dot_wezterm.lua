@@ -17,7 +17,8 @@ config.window_padding = {
 
 -- or, changing the font size and color scheme.
 config.font_size = 14
-config.font = wezterm.font("Fira Code", { weight = "Regular", ligatures = true })
+config.font = wezterm.font("Fira Code", { weight = "Regular" })
+config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 config.color_scheme = "Catppuccin Mocha"
 
 config.hide_tab_bar_if_only_one_tab = true
