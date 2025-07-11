@@ -109,7 +109,7 @@ local weather_icons_night = {
 local weather = sbar.add("item", "widgets.weather", {
 	position = "right",
 	icon = {
-		font = { family = "JetBrainsMono Nerd Font", style = "Regular", size = 20 },
+		font = { family = "FiraCode Nerd Font Propo", style = "Regular", size = 20 },
 		color = colors.magenta,
 		y_offset = 0,
 	},
@@ -127,10 +127,10 @@ local weather = sbar.add("item", "widgets.weather", {
 		height = 30,
 		width = popup_width,
 		icon = {
-			font = { family = "JetBrainsMono Nerd Font", style = "Regular", size = 16 },
+			font = { family = "FiraCode Nerd Font Propo", style = "Regular", size = 16 },
 		},
 		label = {
-			font = { family = "JetBrainsMono Nerd Font", style = "Regular", size = 10 },
+			font = { family = "FiraCode Nerd Font Propo", style = "Regular", size = 10 },
 		},
 		drawing = false,
 	},
@@ -185,12 +185,12 @@ local function toggle_weather()
 			align = "center",
 			width = popup_width,
 			icon = {
-				font = { family = "JetBrainsMono Nerd Font", style = "Bold", size = 14 },
+				font = { family = "FiraCode Nerd Font Propo", style = "Bold", size = 14 },
 				string = icon,
 				drawing = true,
 			},
 			label = {
-				font = { family = "JetBrainsMono Nerd Font", style = "Bold", size = 14 },
+				font = { family = "FiraCode Nerd Font Propo", style = "Bold", size = 14 },
 				string = string.format("%s, %s", data.location.name, data.location.country),
 			},
 			drawing = true,
@@ -200,7 +200,7 @@ local function toggle_weather()
 			align = "center",
 			width = popup_width,
 			label = {
-				font = { family = "JetBrainsMono Nerd Font", style = "Bold", size = 12 },
+				font = { family = "FiraCode Nerd Font Propo", style = "Bold", size = 12 },
 				string = string.format("%s", data.current.condition.text),
 				y_offset = 10,
 			},
@@ -222,12 +222,12 @@ local function toggle_weather()
 			sbar.add("item", "weather.day." .. day_index, {
 				position = "popup." .. weather.name,
 				icon = {
-					font = { family = "JetBrainsMono Nerd Font", style = "Bold", size = 12 },
+					font = { family = "FiraCode Nerd Font Propo", style = "Bold", size = 12 },
 					string = day_icon,
 					drawing = true,
 				},
 				label = {
-					font = { family = "JetBrainsMono Nerd Font", style = "Bold", size = 12 },
+					font = { family = "FiraCode Nerd Font Propo", style = "Bold", size = 12 },
 					string = string.format(
 						"%s: Max %s°C Min %s°C",
 						display_date,
@@ -270,11 +270,11 @@ local function toggle_weather()
 							position = "popup." .. weather.name,
 							width = popup_width,
 							icon = {
-								font = { family = "JetBrainsMono Nerd Font", style = "Bold", size = 13 },
+								font = { family = "FiraCode Nerd Font Propo", style = "Bold", size = 13 },
 								string = hourly_icon,
 							},
 							label = {
-								font = { family = "JetBrainsMono Nerd Font", style = "Regular", size = 12 },
+								font = { family = "FiraCode Nerd Font Propo", style = "Regular", size = 12 },
 								string = string.format(
 									"%s | %s°C | %s°C ",
 									os.date("%H:%M", timestamp),

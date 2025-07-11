@@ -52,8 +52,8 @@ return {
 		padding_right = 2,
 	},
 	font = {
-		text = "FiraCode Nerd Font Mono", -- Used for text
-		numbers = "FiraCode Nerd Font Mono", -- Used for numbers
+		text = "FiraCode Nerd Font Propo", -- Used for text
+		numbers = "FiraCode Nerd Font Propo", -- Used for numbers
 		style_map = {
 			["Regular"] = "Regular",
 			["Semibold"] = "Medium",
