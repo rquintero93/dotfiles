@@ -210,7 +210,7 @@ return {
 	["Thunderbird"] = ":thunderbird:",
 	["Firefox"] = ":firefox:",
 	["Zen"] = ":zen_browser:",
-	["wezterm-gui"] = ":terminal:",
+	["WezTerm"] = ":terminal:",
 	["Steam Helper"] = ":default:",
 	["Benji"] = ":bear:",
 	["Microsoft Outlook"] = ":microsoft_outlook:",
