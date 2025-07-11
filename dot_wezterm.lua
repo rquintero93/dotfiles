@@ -17,7 +17,7 @@ config.window_padding = {
 
 -- or, changing the font size and color scheme.
 config.font_size = 14
-config.font = wezterm.font("Fira Code", { weight = "Regular" })
+config.font = wezterm.font("FiraCode Nerd Font Propo", { weight = "Regular" })
 config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 config.color_scheme = "Catppuccin Mocha"
 
