@@ -31,7 +31,7 @@ for i, workspace in ipairs(workspaces) do
 			highlight = selected,
 			background = {
 				drawing = true,
-				color = colors.with_alpha(colors.black, 0.3),
+				color = colors.with_alpha(colors.black, 0.0),
 				corner_radius = settings.items.corner_radius,
 				height = settings.items.height,
 				border_width = 0,

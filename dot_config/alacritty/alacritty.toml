@@ -14,3 +14,6 @@ option_as_alt = "Both"
 # normal = { family = "Fira Code", style = "Regular" }
 normal.family = "FiraCode Nerd Font Propo"
 size = 14.0
+
+[selection]
+save_to_clipboard = true
