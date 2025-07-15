@@ -197,6 +197,9 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'dev.warp.Warp-Stable'
 run = 'move-node-to-workspace 2'
 [[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace 2'
+[[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace 1'
 [[on-window-detected]]
@@ -225,6 +228,9 @@ if.app-id = 'com.apple.finder'
 run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apptorium.SideNotes-setapp'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.chabomakers.Antinote-setapp'
 run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.electron.kando'
