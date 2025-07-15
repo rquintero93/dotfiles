@@ -6,7 +6,7 @@ antidote load ~/.zsh_plugins.txt
 
 # ENV
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
-[[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
+# [[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
 
 # Editor
 export EDITOR="nvim"
@@ -15,11 +15,7 @@ export EDITOR="nvim"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.atuin/bin:$PATH"
-# export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 if [[ "$OSTYPE" == "darwin"* && -d "$HOME/.docker/completions" ]]; then
   fpath=("$HOME/.docker/completions" $fpath)
 fi
