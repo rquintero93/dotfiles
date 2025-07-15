@@ -6,7 +6,6 @@ antidote load ~/.zsh_plugins.txt
 
 # ENV
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
-# [[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
 
 # Editor
 export EDITOR="nvim"
@@ -39,7 +38,8 @@ alias ls='eza --icons --group-directories-first'
 alias la='ls -la'
 alias cat='bat'
 alias cd='z'
-alias sysupdate="brew update && brew upgrade && brew cleanup && antidote update && cargo install $(cargo install --list|cut -sd' ' -f1) && chezmoi re-add"
+# alias sysupdate="brew update && brew upgrade && brew cleanup && antidote update && cargo install $(cargo install --list|cut -sd' ' -f1) && chezmoi re-add"
+alias sysupdate="cd /etc/nix-darwin/ && nix flake update && sudo darwin-rebuild switch && chezmoi re-add"
 alias pyinit='bash ~/config-repo/pyinit.sh'
 alias syncrc='cd ~/config-repo && git add . && git commit -m "update conf files" && git push'
 alias ndir='cd ~/.config/nvim/'
