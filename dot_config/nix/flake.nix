@@ -83,6 +83,7 @@
           ripgrep
           sesh
           sqlite-utils
+          sqlfluff
           starship
           tectonic
           tmux
