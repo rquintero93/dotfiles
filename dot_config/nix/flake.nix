@@ -16,6 +16,67 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+        commonPackages = pkgs: with pkgs;
+        [ 
+          age
+          atuin
+          awscli
+          bat
+          btop
+          chezmoi
+          cmake
+          cmatrix
+          curl
+          delta
+          eza
+          fastfetch
+          fd
+          ffmpeg
+          fzf
+          gemini-cli
+          gh
+          git
+          git-extras
+          glow
+          go
+          google-cloud-sdk
+          imagemagick
+          lazydocker
+          lazygit
+          llm
+          lua
+          luarocks
+          mongodb-cli
+          mongosh
+          navi
+          neovim
+          nodejs
+          ollama
+          openssl_3
+          python3
+          python313Packages.ipython
+          python313Packages.jupytext
+          python313Packages.pip
+          rbenv
+          ripgrep
+          sesh
+          sqlite-utils
+          sqlfluff
+          starship
+          tectonic
+          tmux
+          tree-sitter
+          uv
+          vim
+          visidata
+          wget
+          yazi
+          zip
+          zoxide
+          zsh
+
+        ];
+
     configuration = { pkgs, ... }: {
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -50,67 +111,8 @@
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages = with pkgs;
-        [ 
-          age
-          atuin
-          awscli
-          bat
-          btop
-          chezmoi
-          cmake
-          cmatrix
-          curl
-          delta
-          eza
-          fastfetch
-          fd
-          ffmpeg
-          fzf
-          gemini-cli
-          gh
-          git
-          git-extras
-          glow
-          go
-          google-cloud-sdk
-          imagemagick
-          lazydocker
-          lazygit
-          llm
-          lua
-          luarocks
-          mongodb-cli
-          mongosh
-          neofetch
-          navi
-          neovim
-          nodejs
-          ollama
-          openssl_3
-          python3
-          python313Packages.ipython
-          python313Packages.jupytext
-          python313Packages.pip
-          rbenv
-          ripgrep
-          sesh
-          sqlite-utils
-          sqlfluff
-          starship
-          tectonic
-          tmux
-          tree-sitter
-          uv
-          vim
-          visidata
-          wget
-          yazi
-          zip
-          zoxide
-          zsh
+      environment.systemPackages = commonPackages pkgs;
 
-        ];
       # Create /etc/zshrc that loads the nix-darwin environment.
       programs.zsh = {
           enable = true;
