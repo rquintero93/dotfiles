@@ -49,6 +49,7 @@
         outer.top = 20;
         outer.right = 20;
       };
+
       mode.main.binding = {
         alt-slash = "layout tiles horizontal vertical";
         alt-comma = "layout accordion horizontal vertical";
@@ -84,6 +85,7 @@
 
         alt-shift-semicolon = "mode service";
       };
+
       mode.service.binding = {
         esc = ["reload-config" "mode main"];
         r = ["flatten-workspace-tree" "mode main"];
@@ -102,21 +104,108 @@
         down = "volume down";
         up = "volume up";
         shift-down = ["volume set 0" "mode main"];
-
-        };
+      };
 
       workspace-to-monitor-force-assignment = {
           "1" = "built-in";
           "2" = "main";
           "3" = "^BK550Y$";
           "4" = "Z1";
-            };
-      
-      # on-window-detected = {
-      #     if.app-id = "com.mitchellh.ghostty";
-      #     run = "move-node-to-workspace 2";
-      #   };
       };
+      
+      on-window-detected = [
+        {
+          "if" = {
+            app-id = "com.mitchellh.ghostty";
+          };
+          run = "move-node-to-workspace 2";
+        }
+        {
+          "if" = {
+            app-id = "net.kovidgoyal.kitty";
+          };
+          run = "move-node-to-workspace 2";
+        }
+        {
+          "if" = {
+            app-id = "dev.warp.Warp-Stable";
+          };
+          run = "move-node-to-workspace 2";
+        }
+        {
+          "if" = {
+            app-id = "org.alacritty";
+          };
+          run = "move-node-to-workspace 2";
+        }
+        {
+          "if" = {
+            app-id = "company.thebrowser.Browser";
+          };
+          run = "move-node-to-workspace 1";
+        }
+        {
+          "if" = {
+            app-id = "org.mozilla.firefox";
+          };
+          run = "move-node-to-workspace 1";
+        }
+        {
+          "if" = {
+            app-id = "app.zen-browser.zen";
+          };
+          run = "move-node-to-workspace 1";
+        }
+        {
+          "if" = {
+            app-id = "com.microsoft.Outlook";
+          };
+          run = "move-node-to-workspace 4";
+        }
+        {
+          "if" = {
+            app-id = "com.microsoft.team2";
+          };
+          run = "move-node-to-workspace 4";
+        }
+        {
+          "if" = {
+            app-id = "ru.keepcoder.Telegram";
+          };
+          run = "move-node-to-workspace 4";
+        }
+        {
+          "if" = {
+            app-id = "com.apple.MobileSMS";
+          };
+          run = "move-node-to-workspace 4";
+        }
+        {
+          "if" = {
+            app-id = "net.whatsapp.WhatsApp";
+          };
+          run = "move-node-to-workspace 4";
+        }
+        {
+          "if" = {
+            app-id = "com.apple.finder";
+          };
+          run = "layout floating";
+        }
+        {
+          "if" = {
+            app-id = "com.chabomakers.Antinote-setapp";
+          };
+          run = "layout floating";
+        }
+        {
+          "if" = {
+            window-title-regex-substring = "^Picture-in-Picture$";
+          };
+          run = "layout floating";
+        }
+      ];
+    };
   };
   
   # programs.git = {
