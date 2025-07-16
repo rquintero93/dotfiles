@@ -109,9 +109,6 @@
 
           enableCompletion = true;
           enableFastSyntaxHighlighting = true;
-          enableFzfCompletion = true;
-          enableFzfGit = true;
-          enableGlobalCompInit = true;
 
       };
     };
