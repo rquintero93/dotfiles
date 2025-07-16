@@ -12,7 +12,10 @@
     configuration = { pkgs, ... }: {
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+
+      # Need this for Determinate NixOS builds
       nix.enable = false;
+
       # Allow unfree packages
       nixpkgs.config.allowUnfree = true;
 
@@ -39,14 +42,58 @@
       ];
 
       # Create /etc/zshrc that loads the nix-darwin environment.
-      programs.zsh.enable = true;
+      programs.zsh = {
+          enable = true;
 
+          # oh-my-zsh = {
+          #   enable = true;
+          #   plugins = [
+          #     "colored-man-pages"
+          #     "zsh-interactive-cd"
+          #     "colorize"
+          #   ];
+          # };
+          # zplug = {
+          #   enable = true;
+          #   plugins = [
+          #   {name = "zsh-users/zsh-autosuggestions";}
+          #   {name = "zsh-users/zsh-completions";}
+          #   {name = "zsh-users/zsh-history-substring-search";}
+          #   {name = "zdharma-continuum/fast-syntax-highlighting";}
+          #   {name = "Aloxaf/fzf-tab";}
+          #   {name = "hlissner/zsh-autopair";}
+          #   {name = "reegnz/jq-zsh-plugin";}
+          #   {name = "mattmc3/ez-compinit";}
+          #   ];
+          # };
+          # antidote = {
+          #   enable = true;
+          #   plugins = [''
+          #     romkatv/zsh-defer
+          #     ohmyzsh/ohmyzsh path:plugins/colorize
+          #     zsh-users/zsh-history-substring-search
+          #     ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+          #     ohmyzsh/ohmyzsh path:plugins/zsh-interactive-cd
+          #     reegnz/jq-zsh-plugin
+          #     hlissner/zsh-autopair
+          #     Aloxaf/fzf-tab
+          #     mattmc3/ez-compinit
+          #     zsh-users/zsh-autosuggestions
+          #     zdharma-continuum/fast-syntax-highlighting
+          #     zsh-users/zsh-completions kind:fpath path:src
+          #     ''
+          #   ];
+          # };
+
+      };
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs;
         [ 
           age
           antidote
+          zplug
+          oh-my-zsh
           atuin
           awscli
           bat
