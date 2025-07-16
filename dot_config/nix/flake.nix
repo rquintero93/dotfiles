@@ -38,63 +38,63 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs;
-        [ vim
-          git
-          wget
-          curl
-          awscli
-          zsh
-          cmake
-          zip
+        [ 
+          age
           antidote
           atuin
-          fastfetch
-          sesh
-          tmux
-          zoxide
-          fzf
-          ripgrep
-          eza
-          neovim
-          nodejs
-          python3
-          uv
+          awscli
+          bat
           btop
-          fd
+          chezmoi
+          cmake
+          cmatrix
+          curl
           delta
+          eza
+          fastfetch
+          fd
+          ffmpeg
+          fzf
+          gemini-cli
+          gh
+          git
           git-extras
           glow
-          starship
-          yazi
-          tree-sitter
-          chezmoi
-          bat
-          gh
-          lazygit
-          lazydocker
-          visidata
-          awscli
-          ffmpeg
-          navi
-          ollama
-          rbenv
+          google-cloud-sdk
           imagemagick
+          lazydocker
+          lazygit
           llm
           lua
           luarocks
-          tectonic
           mongodb-cli
           mongosh
-          age
-          sqlite-utils
-          gemini-cli
-          python313Packages.jupytext
-          python313Packages.ipython
-          python313Packages.pip
-          google-cloud-sdk
-          rbenv
+          navi
+          neovim
+          nodejs
+          ollama
           openssl_3
-          cmatrix
+          python3
+          python313Packages.ipython
+          python313Packages.jupytext
+          python313Packages.pip
+          rbenv
+          rbenv
+          ripgrep
+          sesh
+          sqlite-utils
+          starship
+          tectonic
+          tmux
+          tree-sitter
+          uv
+          vim
+          visidata
+          wget
+          yazi
+          zip
+          zoxide
+          zsh
 
         ];
 
