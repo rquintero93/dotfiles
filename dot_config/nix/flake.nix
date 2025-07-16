@@ -14,6 +14,7 @@
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs,  flake-utils }:
+  # outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flake-utils }:
   let
     configuration = { pkgs, ... }: {
       # Necessary for using flakes on this system.
@@ -68,7 +69,7 @@
   flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ] (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
-      commonPackages = import ./packages.nix { inherit pkgs; };
+      commonPackages = import ./packages.nix pkgs;
     in
     if system == "aarch64-darwin" then
       {} # handled separately below
