@@ -94,6 +94,7 @@
           pkgs.google-cloud-sdk
           pkgs.rbenv
           pkgs.openssl_3
+          pkgs.cmatrix
 
         ];
 
