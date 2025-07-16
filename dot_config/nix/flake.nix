@@ -5,8 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Add Home Manager as an input
+    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,7 +13,7 @@
 
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flake-utils }:
   let
     configuration = { pkgs, ... }: {
       # Necessary for using flakes on this system.
@@ -66,23 +65,39 @@
 
     };
   in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#MacBook-Pro
+  flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ] (system:
+    let
+      pkgs = nixpkgs.legacyPackages.${system};
+      commonPackages = import ./packages.nix { inherit pkgs; };
+    in
+    if system == "aarch64-darwin" then
+      {} # handled separately below
+    else {
+      devShells.${system}.default = pkgs.mkShell {
+        name = "universal-devshell";
+        packages = commonPackages;
+        shellHook = ''
+          echo "🚀 Entering universal devshell for ${system}"
+          exec zsh
+        '';
+      };
+    }
+  ) // {
     darwinConfigurations."MacBook-Pro" = nix-darwin.lib.darwinSystem {
-      modules = [ 
+      modules = [
         configuration
         home-manager.darwinModules.home-manager
       ];
     };
+
     devShells.aarch64-darwin.default = let
-    pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
     in pkgs.mkShell {
       name = "global-devshell";
-      packages = import ./packages.nix pkgs; 
+      packages = import ./packages.nix pkgs;
       shellHook = ''
         export STARSHIP_CONFIG=/dev/null
-        echo "Entering global devshell (isolated)"
+        echo "🍎 Entering global devshell (macOS - starship disabled)"
         exec zsh
       '';
     };
