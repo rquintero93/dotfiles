@@ -5,9 +5,16 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Add Home Manager as an input
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
     configuration = { pkgs, ... }: {
       # Necessary for using flakes on this system.
@@ -107,13 +114,24 @@
       programs.zsh = {
           enable = true;
       };
+
+      # Enable Home Manager
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.ricardoquintero = import ./home.nix;
+      };
+
     };
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#MacBook-Pro
     darwinConfigurations."MacBook-Pro" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [ 
+        configuration
+        home-manager.darwinModules.home-manager
+      ];
     };
   };
 }
