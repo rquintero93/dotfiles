@@ -13,6 +13,18 @@
   
   # Here you can add user-specific configurations
   # For example:
+  services.jankyborders = {
+      enable = true;
+      settings = {
+        style="round";
+        width=8.0;
+        hidpi="on";
+        active_color="0xFF89B4FA";
+        inactive_color="0xFF45475A";
+        ax_focus="on";
+      };
+
+  };
   
   # programs.git = {
   #   enable = true;

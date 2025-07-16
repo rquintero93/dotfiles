@@ -1,0 +1,12 @@
+#!/nix/store/jg93ssisp2ybs513p4xx5277bq7vdcxb-bash-5.2p37/bin/bash
+options=(
+  active_color=0xFF89B4FA
+  ax_focus=on
+  hidpi=on
+  inactive_color=0xFF45475A
+  style=round
+  width=8.000000
+)
+
+/nix/store/icarpxd6mcid1kfg3696abkfxqqr6vsj-JankyBorders-1.7.0/bin/borders "${options[@]}"
+
