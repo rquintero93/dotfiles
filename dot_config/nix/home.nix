@@ -22,7 +22,26 @@
   
   # programs.zsh = {
   #   enable = true;
-  #   enableAutosuggestions = true;
-  #   enableSyntaxHighlighting = true;
+  #   antidote = {
+  #     enable = true;
+  #     plugins =  [''
+  #
+  #       romkatv/zsh-defer
+  #       ohmyzsh/ohmyzsh path:plugins/colorize
+  #       zsh-users/zsh-history-substring-search
+  #       ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+  #       ohmyzsh/ohmyzsh path:plugins/zsh-interactive-cd
+  #       reegnz/jq-zsh-plugin
+  #       hlissner/zsh-autopair
+  #       Aloxaf/fzf-tab
+  #       mattmc3/ez-compinit
+  #       zsh-users/zsh-autosuggestions
+  #       zdharma-continuum/fast-syntax-highlighting
+  #       zsh-users/zsh-completions kind:fpath path:src
+  #       belak/zsh-utils path:completion
+  #
+  #     ''
+  #     ];
+  #   };
   # };
 }
