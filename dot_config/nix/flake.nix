@@ -66,6 +66,7 @@
           git
           git-extras
           glow
+          go
           google-cloud-sdk
           imagemagick
           lazydocker
@@ -84,7 +85,6 @@
           python313Packages.ipython
           python313Packages.jupytext
           python313Packages.pip
-          rbenv
           rbenv
           ripgrep
           sesh
