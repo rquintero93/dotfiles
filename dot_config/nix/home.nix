@@ -26,6 +26,12 @@
 
   };
   
+  programs.aerospace = {
+    enable = true;
+    # userSettings = {
+    # };
+  };
+  
   # programs.git = {
   #   enable = true;
   #   userName = "Ricardo Quintero";
