@@ -23,9 +23,10 @@ command -V zoxide >/dev/null && eval "$(zoxide init zsh)"
 command -V starship >/dev/null && eval "$(starship init zsh)"
 
 # Aliases
-alias zshconfig="nvim ~/.zshrc"
-alias zshsource="source ~/.zshrc"
+alias zshconf="nvim ~/.zshrc"
+alias zshsrc="source ~/.zshrc"
 alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
+alias nixconf="nvim ~/.config/nix/flake.nix"
 alias ls='eza --icons --group-directories-first'
 alias la='ls -la'
 alias cat='bat'
