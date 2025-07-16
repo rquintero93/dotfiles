@@ -82,6 +82,7 @@
           luarocks
           mongodb-cli
           mongosh
+          neofetch
           navi
           neovim
           nodejs
