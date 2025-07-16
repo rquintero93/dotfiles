@@ -32,6 +32,12 @@
           home = "/Users/ricardoquintero";
       };
 
+      fonts.packages = with pkgs; [
+          nerd-fonts.fira-code
+          nerd-fonts.hack
+          nerd-fonts.jetbrains-mono
+      ];
+
       # Create /etc/zshrc that loads the nix-darwin environment.
       programs.zsh.enable = true;
 
