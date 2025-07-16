@@ -36,6 +36,7 @@ alias pyinit='bash ~/config-repo/pyinit.sh'
 alias syncrc='cd ~/config-repo && git add . && git commit -m "update conf files" && git push'
 alias ndir='cd ~/.config/nvim/'
 alias cdir='cd ~/config-repo/'
+alias xdir='cd ~/.config/nix/'
 alias ga='cd ~/Documents/Global\ Alumni/'
 alias desci='cd ~/Documents/DeSciWorld/'
 alias tkill='tmux kill-server'
@@ -46,13 +47,13 @@ alias lg='lazygit'
 alias lzd='lazydocker'
 alias airbyte='ssh -L 8000:localhost:8000 airbyte'
 alias nerdssh="ssh -i ~/.ssh/pems/RicardoSSH.pem ubuntu@15.237.174.231"
-alias switch-nvim="/usr/local/bin/switch_nvim_config.sh"
 alias glow="glow -s ~/config-repo/catppuccin.json"
 function jupyconv() { jupytext --to py:percent "$1"; }
 alias ccd='chezmoi cd'
 alias cra='chezmoi re-add'
 alias cs='chezmoi status'
 alias ca='chezmoi apply'
+alias devbox='nix develop ~/.config/nix'
 
 # DB Tunnel Aliases
 alias db-soa-tunneler='source ~/scripts/ssm-db-tunneler.sh santander eu-west-1 campus-soa san-postgre-2-instance-1-eu-west-1c.cg5xawbcvl2m.eu-west-1.rds.amazonaws.com 5432 5432'
