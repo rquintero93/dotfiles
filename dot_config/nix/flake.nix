@@ -6,15 +6,15 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs,  flake-utils }:
-  # outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flake-utils }:
+  # outputs = inputs@{ self, nix-darwin, nixpkgs,  flake-utils }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flake-utils }:
   let
     configuration = { pkgs, ... }: {
       # Necessary for using flakes on this system.
@@ -58,11 +58,11 @@
       };
 
       # Enable Home Manager
-      # home-manager = {
-      #   useGlobalPkgs = true;
-      #   useUserPackages = true;
-      #   users.ricardoquintero = import ./home.nix;
-      # };
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.ricardoquintero = import ./home.nix;
+      };
 
     };
   in
@@ -87,7 +87,7 @@
     darwinConfigurations."MacBook-Pro" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
-        # home-manager.darwinModules.home-manager
+        home-manager.darwinModules.home-manager
       ];
     };
 
