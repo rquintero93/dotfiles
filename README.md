@@ -31,6 +31,6 @@ Finally
 cd ~/.config/nix && nix develop
 ```
 ## Post Install
-[] Git ssh config [here's how](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
-[] authorize Github Copilot in Neovim run :Copilot auth
-[] install Mason LSPs as needed :Mason
+* Git ssh config [here's how](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
+* authorize Github Copilot in Neovim run :Copilot auth
+* install Mason LSPs as needed :Mason
