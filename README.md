@@ -9,7 +9,7 @@ My dotfiles/dev shell managed by chezmoi/nix
 
 ## Fresh install
 
-Dotfiles bootstrapping
+Dotfiles bootstrapping for all platforms
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply rquintero93
 ```
