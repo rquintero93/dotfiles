@@ -8,7 +8,7 @@ rm pyproject.toml
 rm .gitignore
 rm main.py
 
-# Step 3: Download your custom files
+# Step 3: Copy custom files
 mv ~/config-repo/pyproject.toml pyproject.toml
 mv ~/config-repo/gitignore_template .gitignore
 mv ~/config-repo/dockerignore_template .dockerignore
@@ -28,10 +28,10 @@ echo "::: src.main" > docs/reference/main.md
 # Step 6: Create virtual environment
 uv venv
 
-# Step 7: Activate virtual environment (POSIX-compatible)
+# Step 7: Activate virtual environment
 source .venv/bin/activate
 
-# Step 8: Install dev dependencies
+# Step 8: Install dependencies
 uv sync
 
 echo "✔️ uv project initialized"
