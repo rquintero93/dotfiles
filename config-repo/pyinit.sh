@@ -9,11 +9,11 @@ rm .gitignore
 rm main.py
 
 # Step 3: Download your custom files
-curl -sSL https://raw.githubusercontent.com/rquintero93/rq-configs/main/pyproject.toml -o pyproject.toml
-curl -sSL https://raw.githubusercontent.com/rquintero93/rq-configs/main/gitignore_template -o .gitignore
-curl -sSL https://raw.githubusercontent.com/rquintero93/rq-configs/main/dockerignore_template -o .dockerignore
-curl -sSL https://raw.githubusercontent.com/rquintero93/rq-configs/main/docker_template -o Dockerfile
-curl -sSL https://raw.githubusercontent.com/rquintero93/rq-configs/main/mkdocs_template -o mkdocs.yml
+mv ~/config-repo/pyproject.toml pyproject.toml
+mv ~/config-repo/gitignore_template .gitignore
+mv ~/config-repo/dockerignore_template .dockerignore
+mv ~/config-repo/docker_template Dockerfile
+mv ~/config-repo/mkdocs_template mkdocs.yml
 
 # Step 4: Create a new main.py file
 mkdir src && touch src/main.py
