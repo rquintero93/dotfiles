@@ -2,6 +2,8 @@
 My dotfiles managed by chezmoi
 
 ## Fresh install
+**depends on curl and git**
+
 Dotfiles bootstrapping
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply rquintero93
