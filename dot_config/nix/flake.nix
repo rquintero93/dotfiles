@@ -103,24 +103,30 @@
       };
     };
   in
-    flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux" "x86_64-darwin"]
-    (
+    flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux" "x86_64-darwin"] (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
-        commonPackages = import ./packages.nix pkgs;
-      in
-        if system == "aarch64-darwin"
-        then {} # handled separately below
-        else {
-          devShells.${system}.default = pkgs.mkShell {
-            name = "universal-devshell";
-            packages = commonPackages;
-            shellHook = ''
+        commonPackages = import ./packages.nix {inherit pkgs;};
+      in {
+        devShells.${system}.default = pkgs.mkShell {
+          name =
+            if system == "aarch64-darwin"
+            then "mac-devshell"
+            else "universal-devshell";
+          packages = commonPackages;
+          shellHook =
+            if system == "aarch64-darwin"
+            then ''
+              export STARSHIP_CONFIG=/dev/null
+              echo "🍎 Entering macOS devshell (starship disabled)"
+              exec zsh
+            ''
+            else ''
               echo "🚀 Entering universal devshell for ${system}"
               exec zsh
             '';
-          };
-        }
+        };
+      }
     )
     // {
       darwinConfigurations."MacBook-Pro" = nix-darwin.lib.darwinSystem {
@@ -145,18 +151,5 @@
           }
         ];
       };
-
-      devShells.aarch64-darwin.default = let
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-      in
-        pkgs.mkShell {
-          name = "global-devshell";
-          packages = import ./packages.nix pkgs;
-          shellHook = ''
-            export STARSHIP_CONFIG=/dev/null
-            echo "🍎 Entering global devshell (macOS - starship disabled)"
-            exec zsh
-          '';
-        };
     };
 }
