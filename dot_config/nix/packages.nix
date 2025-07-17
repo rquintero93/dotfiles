@@ -2,28 +2,11 @@
 
 with pkgs; [
           age
-          libaom
           aribb24
-          # arm-gcc-bin
-          brotli
-          giflib
-          # highway
-          imath
-          sbclPackages.jpeg-turbo
-          libjpeg_turbo
-          libdeflate
-          libpng
-          libtiff
-          libvmaf
-          # little-cms2
-          lz4
-          # openxr-loader
-          libwebp
-          xz
-          zstd
           atuin
           awscli
           bat
+          brotli
           btop
           chezmoi
           cmake
@@ -37,17 +20,27 @@ with pkgs; [
           fzf
           gemini-cli
           gh
+          giflib
           git
           git-extras
           glow
           go
           google-cloud-sdk
           imagemagick
+          imath
           lazydocker
           lazygit
+          libaom
+          libdeflate
+          libjpeg_turbo
+          libpng
+          libtiff
+          libvmaf
+          libwebp
           llm
           lua
           luarocks
+          lz4
           mongodb-cli
           mongosh
           navi
@@ -61,9 +54,10 @@ with pkgs; [
           python313Packages.pip
           rbenv
           ripgrep
+          sbclPackages.jpeg-turbo
           sesh
-          sqlite-utils
           sqlfluff
+          sqlite-utils
           starship
           tectonic
           tmux
@@ -72,10 +66,12 @@ with pkgs; [
           vim
           visidata
           wget
+          xz
           yazi
           zip
           zoxide
           zsh
+          zstd
 
         ]
 

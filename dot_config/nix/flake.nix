@@ -10,10 +10,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, flake-utils }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager,nix-homebrew, homebrew-core, homebrew-cask,flake-utils }:
     let
       configuration = { pkgs, ... }: {
         # Necessary for using flakes on this system.
@@ -56,6 +64,25 @@
           enable = true;
         };
 
+        system.primaryUser = "ricardoquintero";
+        homebrew = {
+          enable = true;
+          brews = [
+            "mongodb-database-tools"
+            "arm-gcc-bin@10"
+
+          ];
+          casks = [
+              "aerospace"
+              "alacritty"
+              "wezterm"
+              "font-sf-mono"
+              "font-sf-pro"
+              "sf-symbols"
+
+            ];
+        };
+
         # Enable Home Manager
         home-manager = {
           useGlobalPkgs = true;
@@ -88,6 +115,22 @@
         modules = [
           configuration
           home-manager.darwinModules.home-manager
+          nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            # Install Homebrew under the default prefix
+            enable = true;
+
+            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+            enableRosetta = true;
+
+            # User owning the Homebrew prefix
+            user = "ricardoquintero";
+
+            # Automatically migrate existing Homebrew installations
+            autoMigrate = true;
+          };
+        }
         ];
       };
 
