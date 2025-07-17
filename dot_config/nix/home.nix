@@ -46,7 +46,7 @@
         inner.vertical = 20;
         outer.left = 20;
         outer.bottom = 20;
-        outer.top = 20;
+        outer.top = 5;
         outer.right = 20;
       };
 
