@@ -31,6 +31,7 @@ alias ls='eza --icons --group-directories-first'
 alias la='ls -la'
 alias cat='bat'
 alias cd='z'
+alias cdi='zi'
 alias sysupdate="cd ~/.config/nix/ && sudo determinate-nixd upgrade && nix flake update && sudo darwin-rebuild switch --flake ~/.config/nix && antidote update && chezmoi re-add && cd -"
 alias pyinit='bash ~/config-repo/pyinit.sh'
 alias syncrc='cd ~/config-repo && git add . && git commit -m "update conf files" && git push'
