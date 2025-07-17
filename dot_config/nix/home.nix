@@ -24,6 +24,16 @@
     fi
   '';
 
+  home.activation.installANTIDOTE = ''
+    if [ ! -d "$HOME/.antidote" ]; then
+      echo "Cloning Antidote..."
+      ${pkgs.git}/bin/git clone --depth=1 https://github.com/mattmc3/antidote.git $HOME/.antidote
+    else
+      echo "Updating Antidote..."
+      ${pkgs.git}/bin/git -C $HOME/.antidote pull
+    fi
+  '';
+
   # Here you can add user-specific configurations
   # For example:
   services.jankyborders = {

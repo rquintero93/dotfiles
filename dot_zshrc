@@ -53,7 +53,7 @@ alias ccd='chezmoi cd'
 alias cra='chezmoi re-add'
 alias cs='chezmoi status'
 alias ca='chezmoi apply'
-alias devbox='nix develop ~/.config/nix'
+alias rqshell='nix develop ~/.config/nix'
 alias nixgc='sudo nix-collect-garbage -d'
 
 # DB Tunnel Aliases
