@@ -14,17 +14,17 @@ Dotfiles bootstrapping
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply rquintero93
 ```
 
-Installing Nix Determinate for Linux
+Install Nix Determinate for Linux and launch nix daemon
 ```bash
-curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate && . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 ```
 
-zsh & tmux plugin managers
+Install zsh & tmux plugin managers
 ```bash
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-Finally
+Run RQshell with
 ```bash
 cd ~/.config/nix && nix develop
 ```
