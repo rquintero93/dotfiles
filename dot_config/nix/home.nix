@@ -13,6 +13,17 @@
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
 
+  # TPM installation
+  home.activation.installTPM = ''
+    if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+      echo "Cloning TPM..."
+      ${pkgs.git}/bin/git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+    else
+      echo "Updating TPM..."
+      ${pkgs.git}/bin/git -C $HOME/.tmux/plugins/tpm pull
+    fi
+  '';
+
   # Here you can add user-specific configurations
   # For example:
   services.jankyborders = {
@@ -207,35 +218,4 @@
       ];
     };
   };
-
-  # programs.git = {
-  #   enable = true;
-  #   userName = "Ricardo Quintero";
-  #   userEmail = "your.email@example.com";
-  # };
-
-  # programs.zsh = {
-  #   enable = true;
-  #   antidote = {
-  #     enable = true;
-  #     plugins =  [''
-  #
-  #       romkatv/zsh-defer
-  #       ohmyzsh/ohmyzsh path:plugins/colorize
-  #       zsh-users/zsh-history-substring-search
-  #       ohmyzsh/ohmyzsh path:plugins/colored-man-pages
-  #       ohmyzsh/ohmyzsh path:plugins/zsh-interactive-cd
-  #       reegnz/jq-zsh-plugin
-  #       hlissner/zsh-autopair
-  #       Aloxaf/fzf-tab
-  #       mattmc3/ez-compinit
-  #       zsh-users/zsh-autosuggestions
-  #       zdharma-continuum/fast-syntax-highlighting
-  #       zsh-users/zsh-completions kind:fpath path:src
-  #       belak/zsh-utils path:completion
-  #
-  #     ''
-  #     ];
-  #   };
-  # };
 }
