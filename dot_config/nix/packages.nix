@@ -7,6 +7,7 @@ with pkgs; [
   bat
   brotli
   btop
+  cargo
   chezmoi
   cmake
   curl
@@ -52,6 +53,7 @@ with pkgs; [
   python313Packages.pip
   rbenv
   ripgrep
+  rustc
   sbclPackages.jpeg-turbo
   sesh
   sqlfluff
