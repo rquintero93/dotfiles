@@ -103,28 +103,32 @@
       };
     };
   in
-    flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux" "x86_64-darwin"] (
+    flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"] (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         commonPackages = import ./packages.nix {inherit pkgs;};
       in {
-        devShells.${system}.default = pkgs.mkShell {
-          name =
-            if system == "aarch64-darwin"
-            then "mac-devshell"
-            else "universal-devshell";
-          packages = commonPackages;
-          shellHook =
-            if system == "aarch64-darwin"
-            then ''
-              export STARSHIP_CONFIG=/dev/null
-              echo "🍎 Entering macOS devshell (starship disabled)"
-              exec zsh
-            ''
-            else ''
-              echo "🚀 Entering universal devshell for ${system}"
-              exec zsh
-            '';
+        devShells = {
+          ${system} = {
+            default = pkgs.mkShell {
+              name =
+                if system == "aarch64-darwin"
+                then "mac-devshell"
+                else "universal-devshell";
+              packages = commonPackages;
+              shellHook =
+                if system == "aarch64-darwin"
+                then ''
+                  export STARSHIP_CONFIG=/dev/null
+                  echo "🍎 Entering macOS devshell (starship disabled)"
+                  exec zsh
+                ''
+                else ''
+                  echo "🚀 Entering universal devshell for ${system}"
+                  exec zsh
+                '';
+            };
+          };
         };
       }
     )
