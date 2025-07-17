@@ -7,25 +7,25 @@
 
   # Basic Home Manager configuration
   home.stateVersion = "23.11";
-  
+
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
-  
+
   # Here you can add user-specific configurations
   # For example:
   services.jankyborders = {
-      enable = true;
-      settings = {
-        style="round";
-        width=8.0;
-        hidpi="on";
-        active_color="0xFF89B4FA";
-        inactive_color="0xFF45475A";
-        ax_focus="on";
-      };
+    enable = true;
+    settings = {
+      style = "round";
+      width = 8.0;
+      hidpi = "on";
+      active_color = "0xFF89B4FA";
+      inactive_color = "0xFF45475A";
+      ax_focus = "on";
+    };
 
   };
-  
+
   programs.aerospace = {
     enable = true;
     userSettings = {
@@ -35,9 +35,9 @@
       accordion-padding = 20;
 
       default-root-container-layout = "accordion";
-      
+
       default-root-container-orientation = "auto";
-      on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
+      on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
 
       key-mapping.preset = "qwerty";
 
@@ -87,32 +87,32 @@
       };
 
       mode.service.binding = {
-        esc = ["reload-config" "mode main"];
-        r = ["flatten-workspace-tree" "mode main"];
+        esc = [ "reload-config" "mode main" ];
+        r = [ "flatten-workspace-tree" "mode main" ];
         f = [
-            "layout floating tiling"
-            "mode main"
+          "layout floating tiling"
+          "mode main"
         ];
-        backspace = ["close-all-windows-but-current" "mode main"];
+        backspace = [ "close-all-windows-but-current" "mode main" ];
 
 
-        alt-shift-h = ["join-with left" "mode main"];
-        alt-shift-j = ["join-with down" "mode main"];
-        alt-shift-k = ["join-with up" "mode main"];
-        alt-shift-l = ["join-with right" "mode main"];
+        alt-shift-h = [ "join-with left" "mode main" ];
+        alt-shift-j = [ "join-with down" "mode main" ];
+        alt-shift-k = [ "join-with up" "mode main" ];
+        alt-shift-l = [ "join-with right" "mode main" ];
 
         down = "volume down";
         up = "volume up";
-        shift-down = ["volume set 0" "mode main"];
+        shift-down = [ "volume set 0" "mode main" ];
       };
 
       workspace-to-monitor-force-assignment = {
-          "1" = "built-in";
-          "2" = "main";
-          "3" = "^BK550Y$";
-          "4" = "Z1";
+        "1" = "built-in";
+        "2" = "main";
+        "3" = "^BK550Y$";
+        "4" = "Z1";
       };
-      
+
       on-window-detected = [
         {
           "if" = {
@@ -207,13 +207,13 @@
       ];
     };
   };
-  
+
   # programs.git = {
   #   enable = true;
   #   userName = "Ricardo Quintero";
   #   userEmail = "your.email@example.com";
   # };
-  
+
   # programs.zsh = {
   #   enable = true;
   #   antidote = {
