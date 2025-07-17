@@ -182,6 +182,7 @@ return {
           --   settings = {},
           -- },
           jsonls = {},
+          nil_ls = {},
           -- jedi_language_server = { diagnostics = { enable = false }, hover = { enable = false }, jediSettings = { autoImportModules = { 'numpy', 'pandas' } } },
           basedpyright = {
             settings = {

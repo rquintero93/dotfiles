@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should manage
   home.username = "ricardoquintero";
   home.homeDirectory = "/Users/ricardoquintero";
@@ -23,7 +25,6 @@
       inactive_color = "0xFF45475A";
       ax_focus = "on";
     };
-
   };
 
   programs.aerospace = {
@@ -34,10 +35,10 @@
       enable-normalization-opposite-orientation-for-nested-containers = true;
       accordion-padding = 20;
 
-      default-root-container-layout = "accordion";
+      default-root-container-layout = "tiles";
 
       default-root-container-orientation = "auto";
-      on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
+      on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
 
       key-mapping.preset = "qwerty";
 
@@ -46,7 +47,7 @@
         inner.vertical = 20;
         outer.left = 20;
         outer.bottom = 20;
-        outer.top = 5;
+        outer.top = 3;
         outer.right = 20;
       };
 
@@ -87,23 +88,22 @@
       };
 
       mode.service.binding = {
-        esc = [ "reload-config" "mode main" ];
-        r = [ "flatten-workspace-tree" "mode main" ];
+        esc = ["reload-config" "mode main"];
+        r = ["flatten-workspace-tree" "mode main"];
         f = [
           "layout floating tiling"
           "mode main"
         ];
-        backspace = [ "close-all-windows-but-current" "mode main" ];
+        backspace = ["close-all-windows-but-current" "mode main"];
 
-
-        alt-shift-h = [ "join-with left" "mode main" ];
-        alt-shift-j = [ "join-with down" "mode main" ];
-        alt-shift-k = [ "join-with up" "mode main" ];
-        alt-shift-l = [ "join-with right" "mode main" ];
+        alt-shift-h = ["join-with left" "mode main"];
+        alt-shift-j = ["join-with down" "mode main"];
+        alt-shift-k = ["join-with up" "mode main"];
+        alt-shift-l = ["join-with right" "mode main"];
 
         down = "volume down";
         up = "volume up";
-        shift-down = [ "volume set 0" "mode main" ];
+        shift-down = ["volume set 0" "mode main"];
       };
 
       workspace-to-monitor-force-assignment = {
