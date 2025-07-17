@@ -1,8 +1,13 @@
 # Dotfiles
 My dotfiles managed by chezmoi
 
+## Prerequisites
+* curl
+* git
+* NerFonts FiraCode installed (comes with dotfiles)
+* One of the preconfigured terminal emulators: Alacritty, WezTerm, Kitty, Ghostty. Or configure terminal to use NerdFonts
+
 ## Fresh install
-**depends on curl and git**
 
 Dotfiles bootstrapping
 ```bash
