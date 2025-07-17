@@ -13,7 +13,7 @@ Dotfiles bootstrapping
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply rquintero93
 ```
-For MacOS
+### For MacOS
 
 Install Nix Determinate [MacOS](https://install.determinate.systems/determinate-pkg/stable/Universal)
 
@@ -22,7 +22,7 @@ Then zsh & tmux plugin managers
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-For Linux (Tested on Ubuntu & Fedora)
+### For Linux (Tested on Ubuntu & Fedora)
 Install Nix Determinate for Linux, zsh & tmux plugin managers and launch nix daemon in one command
 ```bash
 curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate && . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -35,7 +35,7 @@ cd ~/.config/nix && nix develop
 ```
 
 ## Post Install
-* Load Neovim plugins (automatic on first launch) and Tmux plugins (CNTRL-A I to load) 
+* Load Neovim plugins (automatic on first launch) and Tmux plugins (inside tmux CNTRL-A I to load) 
 * Git ssh config [here's how](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
-* authorize Github Copilot in Neovim run :Copilot auth
+* authorize Github Copilot, in Neovim run :Copilot auth
 * install Mason LSPs as needed :Mason
