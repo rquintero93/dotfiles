@@ -113,7 +113,7 @@
             name =
               if system == "aarch64-darwin"
               then "mac-devshell"
-              else "universal-devshell";
+              else "RQshell";
             packages = commonPackages;
             shellHook =
               if system == "aarch64-darwin"
@@ -123,7 +123,7 @@
                 exec zsh
               ''
               else ''
-                echo "🚀 Entering universal devshell for ${system}"
+                echo "🚀 Entering RQshell for ${system}"
                 exec zsh
               '';
           };
