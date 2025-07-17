@@ -14,7 +14,7 @@ Installing Nix Determinate for Linux
 curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
 ```
 
-If no home-manager then
+zsh & tmux plugin managers
 ```bash
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
