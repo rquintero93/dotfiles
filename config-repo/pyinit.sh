@@ -9,11 +9,11 @@ rm .gitignore
 rm main.py
 
 # Step 3: Copy custom files
-mv ~/config-repo/pyproject.toml pyproject.toml
-mv ~/config-repo/gitignore_template .gitignore
-mv ~/config-repo/dockerignore_template .dockerignore
-mv ~/config-repo/docker_template Dockerfile
-mv ~/config-repo/mkdocs_template mkdocs.yml
+cp ~/config-repo/pyproject.toml pyproject.toml
+cp ~/config-repo/gitignore_template .gitignore
+cp ~/config-repo/dockerignore_template .dockerignore
+cp ~/config-repo/docker_template Dockerfile
+cp ~/config-repo/mkdocs_template mkdocs.yml
 
 # Step 4: Create a new main.py file
 mkdir src && touch src/main.py
