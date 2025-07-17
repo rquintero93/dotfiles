@@ -109,25 +109,23 @@
         commonPackages = import ./packages.nix {inherit pkgs;};
       in {
         devShells = {
-          ${system} = {
-            default = pkgs.mkShell {
-              name =
-                if system == "aarch64-darwin"
-                then "mac-devshell"
-                else "universal-devshell";
-              packages = commonPackages;
-              shellHook =
-                if system == "aarch64-darwin"
-                then ''
-                  export STARSHIP_CONFIG=/dev/null
-                  echo "🍎 Entering macOS devshell (starship disabled)"
-                  exec zsh
-                ''
-                else ''
-                  echo "🚀 Entering universal devshell for ${system}"
-                  exec zsh
-                '';
-            };
+          default = pkgs.mkShell {
+            name =
+              if system == "aarch64-darwin"
+              then "mac-devshell"
+              else "universal-devshell";
+            packages = commonPackages;
+            shellHook =
+              if system == "aarch64-darwin"
+              then ''
+                export STARSHIP_CONFIG=/dev/null
+                echo "🍎 Entering macOS devshell (starship disabled)"
+                exec zsh
+              ''
+              else ''
+                echo "🚀 Entering universal devshell for ${system}"
+                exec zsh
+              '';
           };
         };
       }
