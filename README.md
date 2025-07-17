@@ -28,7 +28,7 @@ Install Nix Determinate for Linux, zsh & tmux plugin managers and launch nix dae
 curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate && . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-# Both
+### Both
 Run dev shell with
 ```bash
 cd ~/.config/nix && nix develop
