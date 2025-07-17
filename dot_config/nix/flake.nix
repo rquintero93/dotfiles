@@ -70,17 +70,20 @@
           brews = [
             "mongodb-database-tools"
             "arm-gcc-bin@10"
-
+          ];
+          taps = [
+            "nikitabobko/tap"
           ];
           casks = [
-              "aerospace"
+              "nikitabobko/tap/aerospace"
               "alacritty"
               "wezterm"
               "font-sf-mono"
               "font-sf-pro"
               "sf-symbols"
-
             ];
+          
+          onActivation.cleanup = "zap";
         };
 
         # Enable Home Manager

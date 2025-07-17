@@ -10,7 +10,6 @@ with pkgs; [
           btop
           chezmoi
           cmake
-          cmatrix
           curl
           delta
           eza
