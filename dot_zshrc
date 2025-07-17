@@ -1,7 +1,7 @@
 # zmodload zsh/zprof # Uncomment to profile zsh startup
 
 # Antidote plugin manager
-source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
+source ~/.antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
 
 # Editor

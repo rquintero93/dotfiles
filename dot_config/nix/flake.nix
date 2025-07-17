@@ -78,7 +78,7 @@
         brews = [
           "mongodb-database-tools"
           "arm-gcc-bin@10"
-          "antidote"
+          # "antidote"
         ];
         taps = [
           "nikitabobko/tap"
