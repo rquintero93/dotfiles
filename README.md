@@ -13,12 +13,22 @@ Dotfiles bootstrapping
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply rquintero93
 ```
+For MacOS
 
-Install Nix Determinate for Linux, zsh & tmux plugin managers and launch nix daemon  
+Install Nix Determinate [MacOS](https://install.determinate.systems/determinate-pkg/stable/Universal)
+
+Then zsh & tmux plugin managers
+```bash
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+For Linux (Tested on Ubuntu & Fedora)
+Install Nix Determinate for Linux, zsh & tmux plugin managers and launch nix daemon in one command
 ```bash
 curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate && . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+Both
 Run dev shell with
 ```bash
 cd ~/.config/nix && nix develop
