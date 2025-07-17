@@ -25,6 +25,7 @@ cd ~/.config/nix && nix develop
 ```
 
 ## Post Install
+* Load Neovim plugins (automatic on first launch) and Tmux plugins (CNTRL-A I to load) 
 * Git ssh config [here's how](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
 * authorize Github Copilot in Neovim run :Copilot auth
 * install Mason LSPs as needed :Mason
