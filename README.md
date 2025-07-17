@@ -21,8 +21,6 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antid
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-Log in and log out
-
 Finally
 ```bash
 cd ~/.config/nix && nix develop
