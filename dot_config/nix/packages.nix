@@ -2,6 +2,25 @@
 
 with pkgs; [
           age
+          libaom
+          aribb24
+          # arm-gcc-bin
+          brotli
+          giflib
+          # highway
+          imath
+          sbclPackages.jpeg-turbo
+          libjpeg_turbo
+          libdeflate
+          libpng
+          libtiff
+          libvmaf
+          # little-cms2
+          lz4
+          # openxr-loader
+          libwebp
+          xz
+          zstd
           atuin
           awscli
           bat
