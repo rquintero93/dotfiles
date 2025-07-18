@@ -76,10 +76,6 @@
       system.primaryUser = "ricardoquintero";
       homebrew = {
         enable = true;
-        brews = [
-          # "mongodb-database-tools"
-          "arm-gcc-bin@10"
-        ];
         taps = [
           "nikitabobko/tap"
         ];

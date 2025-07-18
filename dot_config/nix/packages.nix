@@ -17,6 +17,7 @@ with pkgs; [
   fd
   ffmpeg
   fzf
+  gcc-arm-embedded
   gemini-cli
   gh
   giflib
