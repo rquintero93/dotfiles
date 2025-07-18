@@ -26,6 +26,7 @@ with pkgs; [
   glow
   go
   google-cloud-sdk
+  hexyl
   imagemagick
   imath
   lazydocker

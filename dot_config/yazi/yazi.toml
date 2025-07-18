@@ -27,7 +27,15 @@ play = [
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 
-
+[[plugin.prepend_previewers]]
+name = "*.md"
+run  = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
+[[plugin.prepend_previewers]]
+name = "*/"
+run  = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"'
+[[plugin.append_previewers]]
+name = "*"
+run  = 'piper -- hexyl --border=none --terminal-width=$w "$1"'
 [open]
 rules = [
 	# Folder
