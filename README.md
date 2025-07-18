@@ -4,7 +4,7 @@ My dotfiles/dev shell managed by chezmoi/nix
 ## Prerequisites
 * curl
 * git
-* NerFonts FiraCode installed (comes with dotfiles)
+* NerFonts FiraCode installed (comes with dotfiles located at ~/FiraCode/)
 * One of the preconfigured terminal emulators: Alacritty, WezTerm, Kitty, Ghostty. Or configure terminal to use NerdFonts
 * ~10GB free space
 
