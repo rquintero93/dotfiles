@@ -9,10 +9,10 @@ local config = wezterm.config_builder()
 -- For example, changing the initial geometry for new windows:
 config.window_decorations = "RESIZE"
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+	left = 2,
+	right = 2,
+	top = 2,
+	bottom = 2,
 }
 
 -- or, changing the font size and color scheme.
