@@ -6,6 +6,7 @@ My dotfiles/dev shell managed by chezmoi/nix
 * git
 * NerFonts FiraCode installed (comes with dotfiles)
 * One of the preconfigured terminal emulators: Alacritty, WezTerm, Kitty, Ghostty. Or configure terminal to use NerdFonts
+* ~10GB free space
 
 ## Fresh install
 
@@ -38,5 +39,5 @@ cd ~/.config/nix && nix develop
 * Git ssh config [here's how](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
 * Load Neovim plugins (automatic on first launch) and Tmux plugins (inside tmux CTRL-a SHIFT-i to load)
 * In Neovim:
-*     install Mason LSPs :MasonToolsInstall
-*     authorize Github Copilot :Copilot auth
+  * install Mason LSPs :MasonToolsInstall
+  * authorize Github Copilot :Copilot auth
