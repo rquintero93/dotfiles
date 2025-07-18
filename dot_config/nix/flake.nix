@@ -83,6 +83,8 @@
           "nikitabobko/tap/aerospace"
           "alacritty"
           "wezterm"
+          "ghostty"
+          "kitty"
           "font-sf-mono"
           "font-sf-pro"
           "sf-symbols"
