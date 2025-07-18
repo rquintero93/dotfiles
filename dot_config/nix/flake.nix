@@ -120,10 +120,12 @@
               then ''
                 export STARSHIP_CONFIG=/dev/null
                 echo "🍎 Entering macOS devshell (starship disabled)"
+                fastfetch
                 exec zsh
               ''
               else ''
                 echo "🚀 Entering RQshell for ${system}"
+                fastfetch
                 exec zsh
               '';
           };
