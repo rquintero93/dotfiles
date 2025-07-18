@@ -260,9 +260,11 @@ return {
         'bashls',
         'dockerls',
         'docker-compose-language-service',
-        -- 'debugpy',
+        'hyprls',
+        'nil_ls',
+        'alejandra',
       })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed, auto_update = true, run_on_start = true }
 
       require('mason-lspconfig').setup {
         handlers = {

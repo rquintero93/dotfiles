@@ -40,6 +40,8 @@ with pkgs; [
   lua
   luarocks
   lz4
+  lynx
+  mermaid-cli
   mongodb-cli
   mongosh
   navi
