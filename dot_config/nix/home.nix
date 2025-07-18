@@ -162,48 +162,56 @@
             app-id = "company.thebrowser.Browser";
           };
           run = "move-node-to-workspace 1";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "org.mozilla.firefox";
           };
           run = "move-node-to-workspace 1";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "app.zen-browser.zen";
           };
           run = "move-node-to-workspace 1";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "com.microsoft.Outlook";
           };
           run = "move-node-to-workspace 4";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "com.microsoft.team2";
           };
           run = "move-node-to-workspace 4";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "ru.keepcoder.Telegram";
           };
           run = "move-node-to-workspace 4";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "com.apple.MobileSMS";
           };
           run = "move-node-to-workspace 4";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "net.whatsapp.WhatsApp";
           };
           run = "move-node-to-workspace 4";
+          check-further-callbacks = true;
         }
         {
           "if" = {
@@ -219,7 +227,7 @@
         }
         {
           "if" = {
-            window-title-regex-substring = "^Picture-in-Picture$";
+            window-title-regex-substring = "Picture-in-Picture";
           };
           run = "layout floating";
         }
