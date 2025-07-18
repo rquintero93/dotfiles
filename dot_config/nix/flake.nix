@@ -77,7 +77,7 @@
       homebrew = {
         enable = true;
         brews = [
-          "mongodb-database-tools"
+          # "mongodb-database-tools"
           "arm-gcc-bin@10"
         ];
         taps = [

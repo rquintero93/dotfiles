@@ -43,6 +43,7 @@ with pkgs; [
   lynx
   mermaid-cli
   mongodb-cli
+  mongodb-tools
   mongosh
   navi
   neovim
