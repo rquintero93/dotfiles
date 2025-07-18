@@ -73,6 +73,7 @@ with pkgs; [
   wget
   xz
   yazi
+  yaziPlugins.starship
   zip
   zoxide
   zsh
