@@ -57,6 +57,7 @@
         home = "/Users/ricardoquintero";
       };
 
+      # Nerd Fonts
       fonts.packages = with pkgs; [
         nerd-fonts.fira-code
         nerd-fonts.hack
@@ -78,7 +79,6 @@
         brews = [
           "mongodb-database-tools"
           "arm-gcc-bin@10"
-          # "antidote"
         ];
         taps = [
           "nikitabobko/tap"

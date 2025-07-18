@@ -34,8 +34,6 @@
     fi
   '';
 
-  # Here you can add user-specific configurations
-  # For example:
   services.jankyborders = {
     enable = true;
     settings = {
