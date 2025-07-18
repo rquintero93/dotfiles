@@ -51,6 +51,7 @@ with pkgs; [
   python313Packages.ipython
   python313Packages.jupytext
   python313Packages.pip
+  python313Packages.pylatexenc
   rbenv
   ripgrep
   rustc
