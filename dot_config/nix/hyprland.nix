@@ -1,0 +1,14 @@
+[
+  "nixpkgs#hyprland"
+  "nixpkgs#hyprctl"
+  "nixpkgs#hypridle"
+  "nixpkgs#hyprlock"
+  "nixpkgs#hyprpaper"
+  "nixpkgs#hyprpicker"
+  "nixpkgs#xdg-desktop-portal-hyprland"
+  "nixpkgs#rofi-wayland"
+  "nixpkgs#rofi"
+  "nixpkgs#clipse"
+  "nixpkgs#hyprpanel"
+  "nixpkgs#hyprshot"
+]
