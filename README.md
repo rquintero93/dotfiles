@@ -44,9 +44,3 @@ cd ~/.config/nix && nix develop
 * bat cache --build
 * navi repo browse and install cheatsheets
 
-## Hyprland
-```bash
-nixdir && nix profile install --file hyprland.nix && nix profile install github:guibou/nixGL --impure
-
-nixGL Hyprland
-```
