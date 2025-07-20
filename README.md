@@ -41,3 +41,10 @@ cd ~/.config/nix && nix develop
 * In Neovim:
   * install Mason LSPs :MasonToolsInstall
   * authorize Github Copilot :Copilot auth
+
+## Hyprland
+```bash
+nixdir && nix profile install --file hyprland.nix && nix profile install github:guibou/nixGL --impure
+
+nixGL Hyprland
+```
