@@ -41,6 +41,8 @@ cd ~/.config/nix && nix develop
 * In Neovim:
   * install Mason LSPs :MasonToolsInstall
   * authorize Github Copilot :Copilot auth
+* bat cache --build
+* navi repo browse and install cheatsheets
 
 ## Hyprland
 ```bash
