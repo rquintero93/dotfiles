@@ -1,0 +1,10 @@
+[
+  {
+    "url": "bigquery:PROJECT_NAME",
+    "name": "bigquery:PROJECT_NAME"
+  },
+  {
+    "url": "MONGO_URI",
+    "name": "DB_NAME"
+  }
+]
