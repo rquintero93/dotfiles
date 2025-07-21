@@ -52,7 +52,7 @@
       start-at-login = true;
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
-      accordion-padding = 20;
+      accordion-padding = 40;
 
       default-root-container-layout = "tiles";
 
