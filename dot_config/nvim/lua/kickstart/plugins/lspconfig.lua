@@ -255,7 +255,6 @@ return {
         'sqlfluff',
         'typescript-language-server',
         'eslint-d',
-        'selene',
         'markdownlint',
         'bashls',
         'dockerls',
@@ -263,6 +262,7 @@ return {
         'hyprls',
         'nil_ls',
         'alejandra',
+        'selene',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed, auto_update = true, run_on_start = true }
 
