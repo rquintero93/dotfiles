@@ -11,7 +11,9 @@ export EDITOR="nvim"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
 export PATH="$HOME/bin:$PATH"
+
 if [[ "$OSTYPE" == "darwin"* && -d "$HOME/.docker/completions" ]]; then
   fpath=("$HOME/.docker/completions" $fpath)
 fi
@@ -49,7 +51,6 @@ alias lzd='lazydocker'
 alias airbyte='ssh -L 8000:localhost:8000 airbyte'
 alias nerdssh="ssh -i ~/.ssh/pems/RicardoSSH.pem ubuntu@15.237.174.231"
 alias glow="glow -s ~/config-repo/catppuccin.json"
-function jupyconv() { jupytext --to py:percent "$1"; }
 alias ccd='chezmoi cd'
 alias cra='chezmoi re-add'
 alias cs='chezmoi status'
@@ -63,7 +64,9 @@ alias db-soa-tunneler-writer='source ~/scripts/ssm-db-tunneler.sh santander eu-w
 alias db-sx-tunneler='source ~/scripts/ssm-db-tunneler.sh santander eu-west-1 campus-santander-x campus-santander-x-instance-1-eu-west-1a.cg5xawbcvl2m.eu-west-1.rds.amazonaws.com 5432 5432'
 alias db-santander-ucpe-tunneler='source ~/scripts/ssm-db-tunneler.sh old_ga eu-west-1 Campus_Santander_UCPE localhost 5432 5432'
 
-# sesh fuzzy selector
+# functions
+function jupyconv() { jupytext --to py:percent "$1"; }
+
 function sesh-sessions() {
   {
     exec </dev/tty
@@ -79,7 +82,6 @@ zle     -N             sesh-sessions
 bindkey -M emacs '\es' sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
-
 
 # Completions
 autoload -Uz compinit
@@ -101,24 +103,13 @@ export FZF_DEFAULT_OPTS=" \
 --color=border:#313244,label:#cdd6f4"
 
 # fzf tab setup
-# disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
 zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
-# preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-# custom fzf flags
-# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
 zstyle ':fzf-tab:*' fzf-flags --color=fg:blue,fg+:2 --bind=enter:accept
-# To make fzf-tab follow FZF_DEFAULT_OPTS.
-# NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
-# switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Full fzf shell integration (keybindings + completion)
