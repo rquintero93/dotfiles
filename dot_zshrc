@@ -81,6 +81,7 @@ bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
 
+# Completions
 autoload -Uz compinit
 zsh-defer -t 0.5 compinit
 
@@ -120,8 +121,6 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
-[[ -f ~/fzf-git.sh/fzf-git.sh ]] && source ~/fzf-git.sh/fzf-git.sh
-
 # Full fzf shell integration (keybindings + completion)
 source ~/config-repo/key-bindings.zsh
 source ~/config-repo/completion.zsh
@@ -139,8 +138,6 @@ function e() {
 # Visual feedback for completions
 COMPLETION_WAITING_DOTS="true"
 
-
 command -v atuin >/dev/null && eval "$(atuin init zsh --disable-up-arrow)"
 
 # zprof # Uncomment to profile zsh startup
-
