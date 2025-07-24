@@ -14,7 +14,7 @@ fi
 
 export PATH="$HOME/bin:$PATH"
 
-if [[ "$OSTYPE" == "darwin"* && -d "$HOME/.docker/completions" ]]; then
+if [[ -d "$HOME/.docker/completions" ]]; then
   fpath=("$HOME/.docker/completions" $fpath)
 fi
 
