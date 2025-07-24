@@ -80,12 +80,17 @@ bindkey -M emacs '\es' sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
+
+autoload -Uz compinit
+zsh-defer -t 0.5 compinit
+
 # FZF + fd setup
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 _fzf_compgen_path() { fd --hidden --exclude .git . "$1" }
 _fzf_compgen_dir() { fd --type=d --hidden --exclude .git . "$1" }
+
 # fzf theme
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:-1,spinner:#f5e0dc,hl:#f38ba8 \
@@ -94,14 +99,11 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
 
-zstyle ':completion:*' menu select
-zstyle ':fzf-tab:*' fzf-command fzf-tmux -p 80%,60%
-zstyle ':fzf-tab:*' switch-group ',' '.'
-zstyle ':fzf-tab:complete:*' fzf-preview 'ls -alF --color=always $realpath'
-zstyle ':fzf-tab:complete:*' fzf-preview '[[ -f $realpath ]] && bat --style=default --color=always $realpath || ls -alF --color=always $realpath'
+# fzf tab setup
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
 zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -110,8 +112,10 @@ zstyle ':completion:*' menu no
 # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # custom fzf flags
+# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
 zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
 # To make fzf-tab follow FZF_DEFAULT_OPTS.
+# NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
@@ -135,8 +139,6 @@ function e() {
 # Visual feedback for completions
 COMPLETION_WAITING_DOTS="true"
 
-autoload -Uz compinit
-zsh-defer -t 0.5 compinit
 
 command -v atuin >/dev/null && eval "$(atuin init zsh --disable-up-arrow)"
 
