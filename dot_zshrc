@@ -1,4 +1,4 @@
-# zmodload zsh/zprof # Uncomment to profile zsh startup
+zmodload zsh/zprof # Uncomment to profile zsh startup
 
 # Antidote plugin manager
 source ~/.antidote/antidote.zsh
@@ -84,7 +84,7 @@ bindkey -M viins '\es' sesh-sessions
 autoload -Uz compinit
 zsh-defer -t 0.5 compinit
 
-# Load zoxide before fzf-tab
+# Load zoxide after compinit
 command -V zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # FZF + fd setup
@@ -131,4 +131,4 @@ COMPLETION_WAITING_DOTS="true"
 
 command -v atuin >/dev/null && eval "$(atuin init zsh --disable-up-arrow)"
 
-# zprof # Uncomment to profile zsh startup
+zprof # Uncomment to profile zsh startup
