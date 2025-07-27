@@ -18,9 +18,6 @@ if [[ -d "$HOME/.docker/completions" ]]; then
   fpath=("$HOME/.docker/completions" $fpath)
 fi
 
-# Load zoxide before fzf-tab
-command -V zoxide >/dev/null && eval "$(zoxide init zsh)"
-
 # Prompt
 command -V starship >/dev/null && eval "$(starship init zsh)"
 
@@ -86,6 +83,9 @@ bindkey -M viins '\es' sesh-sessions
 # Completions
 autoload -Uz compinit
 zsh-defer -t 0.5 compinit
+
+# Load zoxide before fzf-tab
+command -V zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # FZF + fd setup
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
