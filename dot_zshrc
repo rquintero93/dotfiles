@@ -1,4 +1,4 @@
-zmodload zsh/zprof # Uncomment to profile zsh startup
+# zmodload zsh/zprof # Uncomment to profile zsh startup
 
 # Antidote plugin manager
 source ~/.antidote/antidote.zsh
@@ -131,4 +131,4 @@ COMPLETION_WAITING_DOTS="true"
 
 command -v atuin >/dev/null && eval "$(atuin init zsh --disable-up-arrow)"
 
-zprof # Uncomment to profile zsh startup
+# zprof # Uncomment to profile zsh startup
