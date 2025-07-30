@@ -34,8 +34,12 @@ return {
       formatters = {
         sqlfluff = {
           -- `args` is a list of arguments to pass to the formatter.
-          command = '/Users/ricardoquintero/.local/share/nvim/mason/bin/sqlfluff',
-          args = { 'fix' },
+          command = '/run/current-system/sw/bin/sqlfluff',
+          args = { 'fix', '--nocolor', '--FIX-EVEN-UNPARSABLE', '-' },
+          stdin = true,
+          cwd = function()
+            return vim.fn.getcwd()
+          end,
         },
       },
       formatters_by_ft = {
