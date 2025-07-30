@@ -66,6 +66,7 @@ with pkgs; [
   sqlite-utils
   starship
   tectonic
+  tldr
   tmux
   tree-sitter
   uv
