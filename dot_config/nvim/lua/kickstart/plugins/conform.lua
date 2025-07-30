@@ -31,9 +31,12 @@ return {
           lsp_format = lsp_format_opt,
         }
       end,
-      sqlfluff = {
-        -- `args` is a list of arguments to pass to the formatter.
-        args = { 'format' },
+      formatters = {
+        sqlfluff = {
+          -- `args` is a list of arguments to pass to the formatter.
+          command = '/Users/ricardoquintero/.local/share/nvim/mason/bin/sqlfluff',
+          args = { 'fix' },
+        },
       },
       formatters_by_ft = {
         lua = { 'stylua' },
