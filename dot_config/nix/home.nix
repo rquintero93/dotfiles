@@ -71,39 +71,39 @@
       };
 
       mode.main.binding = {
-        alt-slash = "layout tiles horizontal vertical";
-        alt-comma = "layout accordion horizontal vertical";
+        cmd-ctrl-alt-slash = "layout tiles horizontal vertical";
+        cmd-ctrl-alt-alt-comma = "layout accordion horizontal vertical";
 
-        alt-h = "focus left";
-        alt-j = "focus down";
-        alt-k = "focus up";
-        alt-l = "focus right";
+        cmd-ctrl-alt-h = "focus left";
+        cmd-ctrl-alt-j = "focus down";
+        cmd-ctrl-alt-k = "focus up";
+        cmd-ctrl-alt-l = "focus right";
 
-        alt-shift-h = "move left";
-        alt-shift-j = "move down";
-        alt-shift-k = "move up";
-        alt-shift-l = "move right";
+        cmd-ctrl-alt-shift-h = "move left";
+        cmd-ctrl-alt-shift-j = "move down";
+        cmd-ctrl-alt-shift-k = "move up";
+        cmd-ctrl-alt-shift-l = "move right";
 
-        alt-shift-minus = "resize smart -50";
-        alt-shift-equal = "resize smart +50";
+        cmd-ctrl-alt-shift-minus = "resize smart -50";
+        cmd-ctrl-alt-shift-equal = "resize smart +50";
 
-        alt-1 = "workspace 1";
-        alt-2 = "workspace 2";
-        alt-3 = "workspace 3";
-        alt-4 = "workspace 4";
+        cmd-ctrl-alt-1 = "workspace 1";
+        cmd-ctrl-alt-2 = "workspace 2";
+        cmd-ctrl-alt-3 = "workspace 3";
+        cmd-ctrl-alt-4 = "workspace 4";
 
-        alt-shift-1 = "move-node-to-workspace 1";
-        alt-shift-2 = "move-node-to-workspace 2";
-        alt-shift-3 = "move-node-to-workspace 3";
-        alt-shift-4 = "move-node-to-workspace 4";
-        alt-shift-f = "fullscreen";
-        alt-tab = "workspace-back-and-forth";
-        alt-ctrl-tab = "move-workspace-to-monitor --wrap-around next";
-        alt-ctrl-shift-tab = "move-workspace-to-monitor --wrap-around prev";
+        cmd-ctrl-alt-shift-1 = "move-node-to-workspace 1";
+        cmd-ctrl-alt-shift-2 = "move-node-to-workspace 2";
+        cmd-ctrl-alt-shift-3 = "move-node-to-workspace 3";
+        cmd-ctrl-alt-shift-4 = "move-node-to-workspace 4";
+        cmd-ctrl-alt-shift-f = "fullscreen";
+        cmd-ctrl-alt-tab = "workspace-back-and-forth";
+        # alt-ctrl-tab = "move-workspace-to-monitor --wrap-around next";
+        # alt-ctrl-shift-tab = "move-workspace-to-monitor --wrap-around prev";
 
-        alt-q = "close";
+        cmd-ctrl-alt-q = "close";
 
-        alt-shift-semicolon = "mode service";
+        cmd-ctrl-alt-shift-semicolon = "mode service";
       };
 
       mode.service.binding = {
@@ -115,10 +115,10 @@
         ];
         backspace = ["close-all-windows-but-current" "mode main"];
 
-        alt-shift-h = ["join-with left" "mode main"];
-        alt-shift-j = ["join-with down" "mode main"];
-        alt-shift-k = ["join-with up" "mode main"];
-        alt-shift-l = ["join-with right" "mode main"];
+        cmd-ctrl-alt-shift-h = ["join-with left" "mode main"];
+        cmd-ctrl-alt-shift-j = ["join-with down" "mode main"];
+        cmd-ctrl-alt-shift-k = ["join-with up" "mode main"];
+        cmd-ctrl-alt-shift-l = ["join-with right" "mode main"];
 
         down = "volume down";
         up = "volume up";
