@@ -107,8 +107,8 @@
       };
 
       mode.service.binding = {
-        esc = ["reload-config" "mode main"];
-        r = ["flatten-workspace-tree" "mode main"];
+        r = ["reload-config" "mode main"];
+        esc = ["flatten-workspace-tree" "mode main"];
         f = [
           "layout floating tiling"
           "mode main"
