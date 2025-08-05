@@ -23,7 +23,7 @@ return {
           return vim.bo[buf].buftype == 'help'
         end,
       },
-      { title = 'DB Query Result', ft = 'dbout', size = { height = 0.4 } },
+      -- { title = 'DB Query Result', ft = 'dbout', size = { height = 0.4 } },
     },
     -- left = {
     --   {
