@@ -54,6 +54,7 @@ alias cs='chezmoi status'
 alias ca='chezmoi apply'
 alias rqshell='nix develop ~/.config/nix'
 alias nixgc='sudo nix-collect-garbage -d'
+alias nixbuild='sudo darwin-rebuild switch --flake ~/.config/nix'
 
 # DB Tunnel Aliases
 alias db-soa-tunneler='source ~/scripts/ssm-db-tunneler.sh santander eu-west-1 campus-soa san-postgre-2-instance-1-eu-west-1c.cg5xawbcvl2m.eu-west-1.rds.amazonaws.com 5432 5432'
