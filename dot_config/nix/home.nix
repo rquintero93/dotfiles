@@ -229,6 +229,12 @@
           };
           run = "layout floating";
         }
+        {
+          "if" = {
+            window-title-regex-substring = "Kando";
+          };
+          run = "layout floating";
+        }
       ];
     };
   };
