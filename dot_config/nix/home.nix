@@ -231,6 +231,13 @@
         }
         {
           "if" = {
+            app-id = "com.electron.kando";
+          };
+          run = "layout floating";
+          check-further-callbacks = true;
+        }
+        {
+          "if" = {
             window-title-regex-substring = "Picture-in-Picture";
           };
           run = "layout floating";
