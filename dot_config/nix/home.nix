@@ -136,24 +136,28 @@
             app-id = "com.mitchellh.ghostty";
           };
           run = "move-node-to-workspace 2";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "net.kovidgoyal.kitty";
           };
           run = "move-node-to-workspace 2";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "dev.warp.Warp-Stable";
           };
           run = "move-node-to-workspace 2";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "org.alacritty";
           };
           run = "move-node-to-workspace 2";
+          check-further-callbacks = true;
         }
         {
           "if" = {
@@ -216,24 +220,28 @@
             app-id = "com.apple.finder";
           };
           run = "layout floating";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             app-id = "com.chabomakers.Antinote-setapp";
           };
           run = "layout floating";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             window-title-regex-substring = "Picture-in-Picture";
           };
           run = "layout floating";
+          check-further-callbacks = true;
         }
         {
           "if" = {
             window-title-regex-substring = "Kando";
           };
           run = "layout floating";
+          check-further-callbacks = true;
         }
       ];
     };
