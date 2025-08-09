@@ -88,6 +88,7 @@
           "font-sf-mono"
           "font-sf-pro"
           "sf-symbols"
+          "kando"
         ];
 
         onActivation.cleanup = "zap";
