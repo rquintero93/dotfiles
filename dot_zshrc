@@ -6,6 +6,7 @@ antidote load ~/.zsh_plugins.txt
 
 # Editor
 export EDITOR="nvim"
+export SHELL=$(which zsh)
 
 # PATHs
 if [[ "$OSTYPE" == "darwin"* ]]; then
