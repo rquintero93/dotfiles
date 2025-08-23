@@ -52,6 +52,7 @@ with pkgs; [
   nodejs
   ollama
   openssl_3
+  ots
   python3
   python313Packages.ipython
   python313Packages.jupytext
